@@ -13,6 +13,7 @@ I had seen videos about making a blog with the articles written in markdown and 
 ## Project Structure
 
 ```
+
 ├───dist
 ├───docs
 ├───node_modules
@@ -55,6 +56,7 @@ I had seen videos about making a blog with the articles written in markdown and 
         │   └───nav                
         ├───posts                  
         └───projects       
+
 ```
 
 * src contains all of the assets, TypeScript, project files, etc... Upon building, these folders and files are copied over into the dist directory and archived in a .zip file
