@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Neil Clarke">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title><%- title  %> | Neil Clarke</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
+
+	<!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+	<link rel="manifest" href="/favicon_io/site.webmanifest">
+	<meta name="theme-color" content="#7952b3">
+
+    <!-- WINBOX -->
+    <script src="/winbox/winbox.bundle.js"></script>
+
+    <!-- Fontawesome https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers -->
+    <script defer src="/fontawesome/js/brands.js"></script>
+    <script defer src="/fontawesome/js/solid.js"></script>
+    <script defer src="/fontawesome/js/fontawesome.js"></script>
+
+
+    <!-- jquery and bootstrap -->
+    <!-- Bootstrap core CSS -->
+	<link href="/css/style.css" rel="stylesheet">
+
+    <script src="/jquery/jquery.min.js"></script>
+    <!-- <script src="/popper/popper.min.js"></script> -->
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <!-- <link href="blog.css" rel="stylesheet"> -->
+  <style type="text/css">/* Copyright 2014-present Evernote Corporation. All rights reserved. */
+@keyframes caretBlink {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+}
+
+@keyframes rotateSpinner {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+#text-tool-caret {
+    animation-name: caretBlink;  
+    animation-iteration-count: infinite;  
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s; 
+}
+
+#en-markup-loading-spinner {
+    position: absolute;
+    top: calc(50% - 16px);
+    left: calc(50% - 16px);
+    width: 32px;
+    height: 32px;
+}
+
+#en-markup-loading-spinner img {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    animation-name: rotateSpinner;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+</style><style type="text/css">/* Copyright 2014-present Evernote Corporation. All rights reserved. */
+.skitchToastBoxContainer {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    pointer-events: none;
+}
+
+.skitchToastBox {
+    width: 200px;
+    height: 16px;
+    padding: 12px;
+    background-color: rgba(47, 55, 61, 0.95);
+    border-radius: 4px;
+    color: white;
+    cursor: default;
+    font-size: 10pt;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.32);
+    font-family: 'Soleil', Helvetica, Arial, sans-serif;
+    border: 2px rgba(255, 255, 255, 0.38) solid;
+}
+
+.lang-zh-cn .skitchToastBox {
+    font-family: '微软雅黑', 'Microsoft YaHei', SimSun,
+        '&#x30E1;&#x30A4;&#x30EA;&#x30AA;', Meiryo, 'MS PGothic', 'Soleil',
+        Helvetica, Arial, sans-serif;
+}
+
+.lang-ja-jp .skitchToastBox {
+    font-family: '&#x30E1;&#x30A4;&#x30EA;&#x30AA;', Meiryo, 'MS PGothic',
+        '微软雅黑', 'Microsoft YaHei', SimSun, 'Soleil', Helvetica, Arial,
+        sans-serif;
+}
+
+.skitchToast {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
+    height: 10px;
+    color: #f1f5f8;
+    text-align: center;
+}
+
+.skitchVisible {
+    /* Don't remove this class it's a hack used by the Evernote Clipper */
+}
+</style><style type="text/css">/* Copyright 2014-present Evernote Corporation. All rights reserved. */
+
+</style><style type="text/css">/* Copyright 2019-present Evernote Corporation. All rights reserved. */
+
+#en-markup-disabled {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    cursor: default;
+    -webkit-user-select: none;
+}
+
+#en-markup-alert-container {
+    position: absolute;
+    z-index: 9999;
+    width: 450px;
+    left: calc(50% - 225px);
+    top: calc(50% - 85px);
+    background-color: white;
+    box-shadow: 0 2px 7px 1px rgba(0,0,0,0.35);
+    -webkit-user-select: none;
+}
+
+#en-markup-alert-container .cell-2 {
+    position: relative;
+    float: left;
+    width: 345px;
+    margin-top: 29px;
+    margin-bottom: 20px;
+}
+
+#en-markup-alert-container .cell-2 .cell-2-title {
+    margin-bottom: 5px;
+    padding-right: 30px;
+    font-size: 12pt;
+    font-family: Tahoma, Arial;
+}
+
+#en-markup-alert-container .cell-2 .cell-2-message {
+    padding-right: 30px;
+    font-size: 9.5pt;
+    font-family: Tahoma, Arial;
+}
+
+#en-markup-alert-container .cell-3 {
+    position: relative;
+    width: 450px;
+    height: 60px;
+    float: left;
+    background-color: rgb(240,240,240);
+}
+
+#en-markup-alert-container .cell-3 button {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 110px;
+    height: 36px;
+}
+
+#en-markup-alert-container .cell-3 button.alt-button {
+    position: absolute;
+    top: 12px;
+    right: 140px;
+    width: 110px;
+    height: 36px;
+}
+</style>
+</head>
+<body>
+    <aside id="main-sidebar" class="main-sidebar m-0 p-0">
+        <%- include("../partials/nav/_sidebar");%> 
+    </aside>
+    <main id="main-content" class="main-content p-0 <%= root === '/resume' ? "h-100" : "" %>">
+        <!-- TOGGLE NAVBAR ELEMENTS -->
+        <a href="javascript:void(0)" onclick="openNav()" id="nav-open" class="nav-toggle" title="Open Sidebar">
+            <img src="/assets/img/open_arrow.svg">
+        </a>
+        <%- body  %> 
+        <%- include("../partials/_footer");%> 
+    </main>
+
+    <!-- open and closing navbar -->
+    <script>
+        function openNav() {
+            $("#main-sidebar").css("width", "20%");
+            $("#main-content").css("marginLeft", "20%");
+
+            //button display hidden
+            $("#nav-open").css("display", "none");
+            $("#nav-close").css("display", "block");
+        }
+        
+        function closeNav() {
+            $("#main-sidebar").css("width", "0");
+            $("#main-content").css("margin-left", "0");
+
+            //button display hidden
+            $("#nav-open").css("display", "block");
+            $("#nav-close").css("display", "none");
+        }
+
+        // android pill functionality
+        function toggleNav(){
+            var x = document.getElementById("sidebar");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        //Reset UI displays when going from android resolution to ipad+ resolutions
+        function checkWidth(){
+            var windowWidth = $(window).width();
+            if (windowWidth > 600) {
+                var x = document.getElementById("sidebar");
+                x.style.display = "";
+            }
+        }
+
+
+        $(window).resize(checkWidth);
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   sodipodi:docname="open_arrow.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 64.658279 129.31657"
+   height="129.31657mm"
+   width="64.658279mm"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="1912"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="326.78435"
+     inkscape:cx="-133.84521"
+     inkscape:zoom="0.9899495"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:pagecheckerboard="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-184.15917,-104.79059)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       style="fill:#c0adf0;fill-opacity:1;stroke:#292929;stroke-width:1.856;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 185.08717,196.17592 26.72705,-26.72704 -26.72705,-26.72705 z"
+       id="path825" />
+    <path
+       style="fill:#292929;fill-opacity:1;stroke:#292929;stroke-width:1.856;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 185.08717,231.86677 62.41789,-62.41789 -62.41789,-62.4179 v 26.45007 l 35.96783,35.96783 -35.96783,35.96782 z"
+       id="rect10-1" />
+  </g>
+</svg>

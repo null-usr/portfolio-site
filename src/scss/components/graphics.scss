@@ -1,0 +1,85 @@
+//========================= STAR DESIGNS =====================
+.divider-custom {
+	margin: 1.25rem 0 1.5rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include constrain($med){
+		display: none;
+	}
+}
+.divider-custom .divider-custom-line {
+	width: 100%;
+	max-width: 7rem;
+	height: 0.25rem;
+	background-color: #292929;
+	border-radius: 1rem;
+	border-color: #292929 !important;
+}
+.divider-custom .divider-custom-line:first-child {
+	margin-right: 1rem;
+}
+.divider-custom .divider-custom-line:last-child {
+	margin-left: 1rem;
+}
+.divider-custom .divider-custom-icon {
+	color: #292929 !important;
+	font-size: 2rem;
+}
+
+.divider-custom.divider-light .divider-custom-line {
+	background-color: #fff;
+}
+.divider-custom.divider-light .divider-custom-icon {
+	color: #fff !important;
+}
+
+.lavender{
+	color: $lavender;
+}
+
+.lavender-bg{
+	background-color: $lavender;
+}
+
+.greyscale{
+	background-color: $background;
+}
+
+//========================== SHAPES ============================
+//https://css-tricks.com/the-shapes-of-css/
+// https://stackoverflow.com/questions/33413927/is-there-any-way-to-inherit-background-color-from-a-parent-element-as-foregroun
+.diamond{
+	width: 20px;
+	height: 20px;
+	background-color: currentColor;
+	transform:rotate(45deg);
+	display: inline-block;
+	//animation for maybe toggling sidebar
+	//https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+	&.toggle{
+		transition:margin 0.3s;
+	}
+}
+
+.triangle{
+	width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+
+	transform:rotate(45deg);
+}
+
+// .icon-container{
+// 	position: relative;
+// 	transition: all 1s ease-in;
+// }
+
+// .icon-container:hover{
+// 	top: -10px;
+// 	transform:rotate(45deg);
+// }

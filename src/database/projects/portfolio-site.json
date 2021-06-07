@@ -1,0 +1,8 @@
+{
+	"id": 0,
+	"name": "Portfolio site",
+	"summary": "Nodejs and express project. The site you're on right now!",
+	"content": "/projects/portfolio_site.md",
+	"tags": ["node"],
+	"slug":"portfolio-site"
+}

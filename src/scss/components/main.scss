@@ -1,0 +1,103 @@
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/hk-grotesk.min.css");
+
+::selection {
+	background-color:$background;
+	//color:blanchedalmond;
+	color:white;
+}
+
+// https://stackoverflow.com/questions/7049875/why-doesnt-height-100-work-to-expand-divs-to-the-screen-height
+* { padding: 0; margin: 0; }
+html, body {
+	min-height: 100% !important;
+    height: 100%;
+}
+body {
+  //padding: 50px;
+  //font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'HK Grotesk', sans-serif;
+}
+
+body, * {
+	font-family: 'HK Grotesk', sans-serif;
+}
+
+a {
+  color:$link_col;
+}
+
+.main-content{
+	margin-left: 20%;
+	//padding: 1px 16px;
+
+	transition: margin-left .5s;
+
+	@include constrain($med){
+		margin-left: 0;
+	}
+}
+
+//rounded box with black outline
+.rounded-white{
+	background-color: white;
+	border-radius: 10px;
+	border: 3px solid $background;
+
+	@include constrain($small){
+		border-style: none;
+	}
+}
+
+.rounded-black{
+	background-color: $background;
+	outline: 1px solid #fff;
+    outline-offset: -10px;
+}
+
+.tag{
+	padding: 3px;
+	// ::selection{
+	// 	background-color:$lavender;
+	// 	color: black;
+	// }
+	&:hover{
+		background-color:$lavender;
+		border: 1px solid;
+		border-color: inherit;
+	}
+}
+
+.skill-container{
+	display: flex;
+	flex-wrap: wrap;
+
+	justify-content: space-around;
+
+	::selection{
+		background-color:$lavender;
+		//color:blanchedalmond;
+		color:black;
+	}
+
+	.skill-box{
+		margin-top: 10px;
+		width: 400px;
+		height: 300px;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		position:relative;
+
+		//rounded corners, kind of like cards
+		border-radius: 15px;
+		border: 3px solid $background;
+
+		.skill-header{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+	}
+}

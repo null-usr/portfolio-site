@@ -1,0 +1,12 @@
+@import './includes/vars';
+@import './includes/mixins';
+@import './components/main.scss';
+@import './components/home.scss';
+@import './components/sidebar.scss';
+@import './components/footer.scss';
+@import './components/projects.scss';
+@import './components/blog.scss';
+@import './components/graphics.scss';
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";

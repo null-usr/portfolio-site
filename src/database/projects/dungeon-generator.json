@@ -1,0 +1,8 @@
+{
+	"id": 0,
+	"name": "Dungeon Generator",
+	"summary": "Procedural 2D map generator",
+	"content": "/projects/dungeon_generator.md",
+	"tags": ["c++"],
+	"slug":"dungeon-generator"
+}

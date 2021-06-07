@@ -1,0 +1,9 @@
+// apply the content css when the screen width is less than width
+@mixin constrain($width) {
+	@media screen and (max-width:$width + 'px') { @content; }
+}
+
+//apply the css when the screen width is greater than width
+@mixin inv_constrain($width){
+	@media screen and (min-width:$width + 'px') { @content; }
+}

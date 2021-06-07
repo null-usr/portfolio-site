@@ -1,0 +1,43 @@
+├───dist
+├───docs
+├───node_modules
+|   ├─── ...                    
+├───scripts                        
+└───src                            
+    ├───assets                     
+    │   ├───css                    
+    │   ├───img                    
+    │   │   └───portfolio          
+    │   ├───js                     
+    │   └───mail                   
+    ├───config                     
+    ├───controllers                
+    ├───database                   
+    │   ├───blog                   
+    │   └───projects               
+    ├───models                     
+    ├───public                     
+    │   ├───blog                   
+    │   ├───css                    
+    │   ├───favicon_io             
+    │   ├───images                 
+    │   ├───js                     
+    │   ├───pdf                    
+    │   └───projects               
+    │       ├───amboss-extension   
+    │       ├───dungeon-generator  
+    │       ├───orbital            
+    │       ├───portfolio-site     
+    │       └───property-app       
+    ├───routes                     
+    ├───scss                       
+    │   ├───components             
+    │   └───includes               
+    ├───util                       
+    └───views                      
+        ├───jade                   
+        ├───layouts                
+        ├───partials               
+        │   └───nav                
+        ├───posts                  
+        └───projects               

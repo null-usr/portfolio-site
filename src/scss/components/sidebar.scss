@@ -1,0 +1,258 @@
+.main-sidebar {
+
+	::selection{
+		background-color:$lavender;
+		color: black;
+	}
+	//float: left;
+	overflow:hidden;
+
+	color:white;
+	background-color: $background;
+
+	height: 100%;
+	width: 20%;
+	//max-width:max-content;
+	margin: 0;
+	padding: 0;
+
+	position:fixed;
+	overflow: auto;
+
+	transition: 0.3s;
+
+	font-size: 1em;
+
+	/* constraint for smaller screens (see includes/mixins) */
+	@include constrain($med){
+		width: 100% !important;
+		height: auto;
+		position: relative;
+	}
+
+	a, p.description {
+		font-size: 1.25em;
+	}
+
+	p.description{
+		text-align: center;
+		@include constrain($med){
+			text-align: left;
+			border-bottom:3px solid white;
+		}
+	}
+
+	a.home {
+		display:block;
+        text-decoration:none white;
+        text-align:center;
+        color:white;
+		@include constrain($med){
+			display: inline-block;
+		}
+	}
+
+	h2{
+		text-align:center;
+        font-size:3em;
+		display: block;
+	}
+
+	h2, p.description{
+		/* constraint for smaller screens */
+		@include constrain($med){
+			text-align: left;
+		}
+	}
+
+	.sidebar-pills{
+		overflow:hidden;
+		font-size: 1.5em;
+		text-align: right;
+		display:block;
+		padding-right:50px;
+		margin-top: 5rem;
+		//position:absolute;
+		//top:50%;
+
+		/* constraint for smaller screens */
+		@include constrain($med){
+			position: absolute;
+			float:right;
+			text-align:right;
+			top: 0;
+			right: 0;
+			font-size: 1em;
+			margin-top: 2%;
+		}
+
+		@include constrain($small){
+			display: none;
+			position: relative;
+			font-size: 1em;
+			padding-right: 5px;
+			float: left;
+		}
+	}
+	
+	.nav-link{
+		display: block;
+		color: grey;
+
+		@include constrain($small){
+			color: white;
+			padding-left: 0;
+		}
+	}
+
+	.nav-link:hover{
+		color:white;
+	}
+
+	#console-nav{
+		@include constrain($small){
+			display: none;
+		}
+	}
+
+	.android-pills{
+		display: none;
+
+		@include constrain($small){
+			display:block;
+			position: absolute;
+			float:right;
+			text-align:right;
+			top: 0;
+			right: 1rem;
+			font-size: 1em;
+			margin-top: 2%;
+		}
+	}
+
+	// .android-nav{
+	// 	display: none;
+	// 	@include constrain($small){
+	// 		display:block;
+	// 	}
+	// }
+
+	// ======================== ICON COLOURS =====================
+	.socials-container{
+		>a{
+			display: inline-block;
+			padding: 10px;
+			margin: 0px 5px 0px;
+
+			border: 2px solid grey;
+			border-radius: 10px;
+
+			position: relative;
+			transition: top 1s ease-in;
+			transition: border 0.5s ease-in;
+
+			span{
+				color: grey;
+			}
+
+			// https://stackoverflow.com/questions/2204634/how-to-disable-automatic-links-coloring-without-selecting-a-color
+			div{
+				color: inherit;
+				text-decoration: none;
+	
+				@include constrain($small){
+					color: white;
+					padding-left: 0;
+				}
+			}
+
+
+			@include constrain($med){
+				padding: 1px;
+			}
+		}
+
+		>a:hover{
+			@include inv_constrain(1360){
+				top: -10px;
+			}
+			
+			border: 2px solid white;
+			//transform:rotate(45deg);
+
+			span{
+				.fa-github{
+					color: white;
+				}
+				.fa-linkedin{
+					color:#2867B2;
+				}
+				.fa-file-pdf{
+					color:$lavender;
+				}
+			}
+		}
+		
+	}
+
+	.footer-bottom{
+		position: absolute;
+		margin: auto;
+		display:block;
+		bottom: 0;
+	
+		@include constrain($med){
+			position: relative;
+			bottom: auto;
+			float:right;
+			display: none;
+		}
+	}
+}
+
+//========================== RESPONSIVENESS ======================
+// https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp
+@media screen and (max-width:1360px) {
+	//hide the blurb when we're at a certain width
+	.sidebar-blurb{
+		display: none;
+	}
+}
+
+//hide the toggle elements when it gets too small
+.nav-toggle{
+	img{
+		width: 50px;
+	}
+	@include constrain($med){
+		display:none !important;
+	}
+}
+
+//nav open's display is none by default
+#nav-open{
+	display: none;
+	position: fixed;
+	transition: all .2s ease-in-out;
+}
+
+#nav-close{
+	position: absolute;
+	top: 0;
+	right: 3px;
+	transition: all .2s ease-in-out;
+}
+
+#nav-open:hover, #nav-close:hover{
+	transform: scale(1.1);
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+  
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+	.main-sidebar a {
+	  text-align: center;
+	  float: none;
+	}
+}

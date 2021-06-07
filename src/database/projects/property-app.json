@@ -1,0 +1,8 @@
+{
+	"id": 0,
+	"name": "Property App",
+	"summary": "Property rental and sale web application",
+	"content": "/projects/property-app.md",
+	"tags": ["rails"],
+	"slug":"property-app"
+}

@@ -1,0 +1,25 @@
+.home-hero{
+	background-color: $background;
+	position: relative;
+	
+	//border: 2px solid red;
+	//border-radius: 50px;
+	outline: 1px solid #fff;
+    outline-offset: -10px;
+}
+
+.home-logo{
+	margin: auto;
+	
+	img{
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+}
+
+.go-to-bottom{
+	//display: block;
+	position: absolute;
+	bottom: 0;
+}
