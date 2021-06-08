@@ -19,8 +19,7 @@ const {
 } = process.env;
 
 let port;
-if (process.env.POSTGRES_PORT && (ENV === 'test' || ENV === 'dev')) 
-{
+if (process.env.POSTGRES_PORT && (ENV === 'test' || ENV === 'dev')) {
     port = parseInt(process.env.POSTGRES_PORT) || 5432;
 }
 /*else if (AWS_DB_PORT)
@@ -43,8 +42,7 @@ if (ENV === 'test') {
         password: POSTGRES_PASSWORD,
         port: port || 5432,
     });
-} 
-else if (ENV === 'prod') {
+} else if (ENV === 'prod') {
     /*client = new Pool({
         host: AWS_DB_HOST,
         database: AWS_DB_NAME,
@@ -52,8 +50,7 @@ else if (ENV === 'prod') {
         password: AWS_DB_PASSWORD,
         port: port || 5432,
     });*/
-}
-else{
+} else {
     client = new Pool({
         host: POSTGRES_HOST,
         database: POSTGRES_DB,
@@ -62,6 +59,5 @@ else{
         port: port || 5432,
     });
 }
-
 
 export default client;

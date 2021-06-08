@@ -13,7 +13,7 @@
     "dev": "nodemon",
     "clean": "rm -rf dist/ || true",
     "build": "npm run clean && npm run build-sass && chmod +x ./scripts/build.sh && ./scripts/build.sh",
-    "build:windows": "npm run clean && npm run build-sass && chmod +x ./scripts/build_windows.sh && ./scripts/build_windows.sh",
+    "build:windows": "npm run clean && npm run build-sass && chmod +x ./scripts/build_windows.sh && sh ./scripts/build_windows.sh",
     "prod": "npm run build && node ./dist/server.js",
     "prod:windows": "npm run build:windows && node ./dist/server.js",
     "tsc": "tsc",

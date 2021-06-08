@@ -12,45 +12,51 @@ const store = new ResourceLoader();
 });*/
 
 const index = async (_req: Request, res: Response) => {
-  try{
-    const posts = store.index<Post>('blog').sort( (a: Post, b: Post) => {
-		  return a.createdAt < b.createdAt ? 1 : -1;
-	  });
+    try {
+        const posts = store.index<Post>('blog').sort((a: Post, b: Post) => {
+            return a.createdAt < b.createdAt ? 1 : -1;
+        });
 
-    const featured_post = posts[0];
-    featured_post.createdAt = new Date((featured_post.createdAt as unknown) as string);
+        const featured_post = posts[0];
+        featured_post.createdAt = new Date(
+            featured_post.createdAt as unknown as string
+        );
 
-    const projects = store.index<Project>('projects');
-    const featured_project = projects[Math.floor(Math.random() * projects.length)];
+        const projects = store.index<Project>('projects');
+        const featured_project =
+            projects[Math.floor(Math.random() * projects.length)];
 
-
-    res.render('index', {title: "Home", root: '/', featured_post: featured_post, featured_project: featured_project});
-  } catch (err) {
-    res.status(500).json(err);
-  }
+        res.render('index', {
+            title: 'Home',
+            root: '/',
+            featured_post: featured_post,
+            featured_project: featured_project,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 };
 
 const about = async (_req: Request, res: Response) => {
-  try{
-    res.render('about', {title: "About", root: '/about'});
-  } catch (err) {
-    res.status(500).json(err);
-  }
+    try {
+        res.render('about', { title: 'About', root: '/about' });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 };
 
 const resume = async (_req: Request, res: Response) => {
-  try{
-    res.render('resume', {title: "Resume", root: '/resume'});
-  } catch (err) {
-    res.status(500).json(err);
-  }
+    try {
+        res.render('resume', { title: 'Resume', root: '/resume' });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 };
 
-const static_pages = (app:express.Application): void => {
-
-  app.get('/about', about);
-  app.get('/', index);
-  app.get('/resume', resume);
-}
+const static_pages = (app: express.Application): void => {
+    app.get('/about', about);
+    app.get('/', index);
+    app.get('/resume', resume);
+};
 
 export default static_pages;

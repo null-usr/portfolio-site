@@ -4,17 +4,17 @@ import bcrypt from 'bcrypt';
 export type Post = {
     id?: number;
     createdAt: Date;
-	title: string;
+    title: string;
     summary: string;
     content: string;
-	tags?: string[];
+    tags?: string[];
     thumb?: string;
     hide?: boolean;
     slug: string;
 };
 
-export class PostBase{
-	async index(): Promise<Post[]> {
+export class PostBase {
+    async index(): Promise<Post[]> {
         try {
             const conn = await client.connect();
             const sql = 'SELECT * FROM Posts';

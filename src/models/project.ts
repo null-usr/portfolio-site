@@ -4,18 +4,18 @@ import { default as slug } from 'slug';
 
 export type Project = {
     id?: number;
-	name: string;
+    name: string;
     summary: string;
     content: string; //path to md file
     thumb?: string;
-	tags?: string[];
+    tags?: string[];
     hide?: boolean;
     slug: string;
 };
 
 /* for pgdb */
-export class ProjectBase{
-	async index(): Promise<Project[]> {
+export class ProjectBase {
+    async index(): Promise<Project[]> {
         try {
             const conn = await client.connect();
             const sql = 'SELECT * FROM Projects';
@@ -119,7 +119,9 @@ export class ProjectBase{
             //throw "No Project with such an ID exists.";
             return null;
         } catch (err) {
-            throw new Error(`Could not authenticate Project ${id}. Error: ${err}`);
+            throw new Error(
+                `Could not authenticate Project ${id}. Error: ${err}`
+            );
         }
     }
 }

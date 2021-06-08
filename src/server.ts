@@ -12,7 +12,6 @@ import projects_controller from './controllers/projects';
 import posts_controller from './controllers/posts';
 import console_controller from './controllers/console';
 
-
 import static_pages from './controllers/static_pages';
 import * as dotenv from 'dotenv';
 
@@ -57,11 +56,37 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // https://expressjs.com/en/starter/static-files.html
 // https://stackoverflow.com/questions/30473993/how-to-use-npm-installed-bootstrap-in-express
-app.use("/bootstrap", express.static(path.join( process.cwd(), 'node_modules','bootstrap', 'dist')));
-app.use("/jquery", express.static(path.join(process.cwd(), 'node_modules', 'jquery', 'dist')));
-app.use("/popper", express.static(path.join(process.cwd(), 'node_modules','popper.js', 'dist')));
-app.use("/winbox", express.static(path.join(process.cwd(), 'node_modules','winbox', 'dist')));
-app.use("/fontawesome", express.static(path.join(process.cwd(), 'node_modules','@fortawesome',"fontawesome-free")));
+app.use(
+    '/bootstrap',
+    express.static(
+        path.join(process.cwd(), 'node_modules', 'bootstrap', 'dist')
+    )
+);
+app.use(
+    '/jquery',
+    express.static(path.join(process.cwd(), 'node_modules', 'jquery', 'dist'))
+);
+app.use(
+    '/popper',
+    express.static(
+        path.join(process.cwd(), 'node_modules', 'popper.js', 'dist')
+    )
+);
+app.use(
+    '/winbox',
+    express.static(path.join(process.cwd(), 'node_modules', 'winbox', 'dist'))
+);
+app.use(
+    '/fontawesome',
+    express.static(
+        path.join(
+            process.cwd(),
+            'node_modules',
+            '@fortawesome',
+            'fontawesome-free'
+        )
+    )
+);
 
 // app.get('/', function (req: Request, res: Response) {
 //     res.send('Hello World!');
@@ -77,20 +102,27 @@ console_controller(app);
 //app.use( '/', index_route );
 
 // catch 404 and forward to error handler ==================================================
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     next(createError(404));
-  });
+});
 // error handler
 // https://stackoverflow.com/questions/50218878/typescript-express-error-function
-app.use((err: { message: any; status: any; }, req: Request, res: Response, next: NextFunction) => {
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
-  
-    // render the error page
-    res.status(err.status || 500);
-    res.render('error', {title: "Error", root: "/error"});
-  });
+app.use(
+    (
+        err: { message: any; status: any },
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ) => {
+        // set locals, only providing error in development
+        res.locals.message = err.message;
+        res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+        // render the error page
+        res.status(err.status || 500);
+        res.render('error', { title: 'Error', root: '/error' });
+    }
+);
 
 app.listen(port, function () {
     console.log(`starting app on: ${port}`);
