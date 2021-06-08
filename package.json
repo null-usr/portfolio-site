@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Neil Clarke Portfolio Site",
+  "main": "server.js",
   "scripts": {
     "prettier": "prettier --config .prettierrc \"src/**/*.ts\" --write",
     "lint": "eslint . --ext .ts",
@@ -12,7 +13,7 @@
     "start": "node .",
     "dev": "nodemon",
     "clean": "rm -rf dist/ || true",
-    "build": "npm run clean && npm run build-sass && chmod +x ./scripts/build.sh && ./scripts/build.sh",
+    "build:linux": "npm run clean && npm run build-sass && chmod +x ./scripts/build.sh && ./scripts/build.sh",
     "build:windows": "npm run clean && npm run build-sass && chmod +x ./scripts/build_windows.sh && sh ./scripts/build_windows.sh",
     "prod": "npm run build && node ./dist/server.js",
     "prod:windows": "npm run build:windows && node ./dist/server.js",
