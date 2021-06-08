@@ -1,3 +1,5 @@
+#!/usr/bin/sh
+
 npx tsc 
 cp -R src/assets dist/assets
 cp -R src/public dist/public
