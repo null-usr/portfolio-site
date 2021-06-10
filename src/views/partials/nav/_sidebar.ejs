@@ -1,16 +1,20 @@
-<div class="text-white h-100 pb-0 pt-4 px-1">
-	<a href="/" class="home" title="HOME">
-		<h2>NEIL<br>CLARKE</h2>
-	</a>
-	<p class="description d-block">Software Engineer and Developer</p>
-	<!-- star logo -->
-	<div class="divider-custom divider-light">
-		<div class="divider-custom-line"></div>
-		<!-- <div class="divider-custom-icon"><i class="fas fa-star"></i></div> -->
-		<span class="lavender">
-			<div class="diamond"></div>
-		</span>
-		<div class="divider-custom-line"></div>
+<div class="text-white h-100 pb-0 pt-4 px-1 sidebar-inner">
+	<!-- MASTHEAD -->
+	<div>
+		<a href="/" class="home" title="HOME">
+			<h2>NEIL<br>CLARKE</h2>
+		</a>
+		<p class="description d-block">Software Engineer and Developer</p>
+
+		<!-- star logo -->
+		<div class="divider-custom divider-light">
+			<div class="divider-custom-line"></div>
+			<!-- <div class="divider-custom-icon"><i class="fas fa-star"></i></div> -->
+			<span class="lavender">
+				<div class="diamond"></div>
+			</span>
+			<div class="divider-custom-line"></div>
+		</div>
 	</div>
 
 	<!-- TOGGLE NAVBAR ELEMENTS -->
@@ -22,86 +26,92 @@
 		<i class="fa fa-bars"></i>
 	</a>
 	
-	<nav class="sidebar-pills align-middle" id="sidebar">
-		<ul class="nav nav-pills flex-md-column">
-			<li class="">
-				<a href="/projects" class="nav-link <%= root === '/projects' ? "text-white" : "" %>">
-					<span class="">Projects</span> 
-					<!-- in order to make the text disappear on smaller screens w/ bootstrap -->
-					<!-- <span class=" d-none d-sm-inline">About</span> -->
-					<i class="fas fa-laptop-code"></i>
-				</a>
-			</li>
-			<li class="">
-				<a href="/blog" class="nav-link  <%= root === '/blog' ? "text-white" : "" %>">
-					<span class="">Blog</span>
-					<i class="fas fa-comment-alt"></i>
-				</a>
-			</li>
-			<li class="">
-				<a href="/about" class="nav-link  <%= root === '/about' ? "text-white" : "" %>">
-					<span class="">About</span>
-					<i class="fas fa-info-circle"></i>
-				</a>
-			</li>
-			<li class="">
-				<a href="/console" class="nav-link <%= root === '/console' ? "text-white" : "" %>" id="console-nav">
-					<span class="">Console</span>
-					<i class="fas fa-terminal"></i>
-				</a>
-			</li>
-			<!-- <li class="dropdown">
-				<a href="#" class="nav-link dropdown-toggle px-sm-0 px-1 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-					<i class="fs-5 bi-bootstrap"></i><span class="ms-1 d-none d-sm-inline">Bootstrap</span>
-				</a>
-				<ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
-					<li><a class="dropdown-item" href="#">New project...</a></li>
-					<li><a class="dropdown-item" href="#">Settings</a></li>
-					<li><a class="dropdown-item" href="#">Profile</a></li>
-					<li>
-						<hr class="dropdown-divider">
-					</li>
-					<li><a class="dropdown-item" href="#">Sign out</a></li>
-				</ul>
-			</li> -->
-		</ul>
-	</nav>
-
-	<footer class="text-center text-white footer-bottom">
-		<!-- Grid container -->
-		<div class="container p-4 hidden-sm-down">
-			<!-- Section: Text -->
-			<section class="mb-4 sidebar-blurb">
-				<p>
-					(Barely) Social Media!<br>Find me at the links down below, or check out my CV down on the right.
-				</p>
-			</section>
-			<!-- Section: Social media -->
-			<section class="mb-2 socials-container">
-				<!-- Github -->
-				<a class="socials" href="https://github.com/null-usr" role="button" title="GitHub">
-					<div class="icon-container">
-						<span><i class="fab fa-github fa-2x"></i></span>
-					</div>
-				</a>
-				<!-- linkedin -->
-				<a class="socials" href="https://www.linkedin.com/in/n-clarke/" title="LinkedIn">
-					<div class="icon-container">
-						<span><i class="fab fa-linkedin fa-2x"></i></span>	
-					</div>
-				</a>
-				<!-- CV -->
-				<a href="/resume" title="Resume">
-					<div class="icon-container">
-						<span><i class="fas fa-file-pdf fa-2x"></i></span>	
-					</div>
-				</a>
-				<!-- <a class="btn btn-outline-light btn-floating m-1" href="/resume">
-					<i class="fas fa-file-pdf fa-2x"></i>
-				</a> -->
-			</section>
-			<!-- Section: Social media -->
-		</div>
-	</footer>
+	<!-- NAV ELEMENTS -->
+	<div>
+		<nav class="sidebar-pills" id="sidebar">
+			<ul class="nav nav-pills flex-md-column">
+				<li class="">
+					<a href="/projects" class="nav-link <%= root === '/projects' ? "text-white" : "" %>">
+						<span class="">Projects</span> 
+						<!-- in order to make the text disappear on smaller screens w/ bootstrap -->
+						<!-- <span class=" d-none d-sm-inline">About</span> -->
+						<i class="fas fa-laptop-code"></i>
+					</a>
+				</li>
+				<li class="">
+					<a href="/blog" class="nav-link  <%= root === '/blog' ? "text-white" : "" %>">
+						<span class="">Blog</span>
+						<i class="fas fa-comment-alt"></i>
+					</a>
+				</li>
+				<li class="">
+					<a href="/about" class="nav-link  <%= root === '/about' ? "text-white" : "" %>">
+						<span class="">About</span>
+						<i class="fas fa-info-circle"></i>
+					</a>
+				</li>
+				<li class="">
+					<a href="/console" class="nav-link <%= root === '/console' ? "text-white" : "" %>" id="console-nav">
+						<span class="">Console</span>
+						<i class="fas fa-terminal"></i>
+					</a>
+				</li>
+				<!-- <li class="dropdown">
+					<a href="#" class="nav-link dropdown-toggle px-sm-0 px-1 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="fs-5 bi-bootstrap"></i><span class="ms-1 d-none d-sm-inline">Bootstrap</span>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+						<li><a class="dropdown-item" href="#">New project...</a></li>
+						<li><a class="dropdown-item" href="#">Settings</a></li>
+						<li><a class="dropdown-item" href="#">Profile</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#">Sign out</a></li>
+					</ul>
+				</li> -->
+			</ul>
+		</nav>
+	</div>
+	
+	<!-- FOOTER -->
+	<div>
+		<footer class="text-center text-white footer-bottom">
+			<!-- Grid container -->
+			<div class="container p-4 hidden-sm-down">
+				<!-- Section: Text -->
+				<section class="mb-4 sidebar-blurb">
+					<p>
+						(Barely) Social Media!<br>Find me at the links down below, or check out my CV down on the right.
+					</p>
+				</section>
+				<!-- Section: Social media -->
+				<section class="mb-2 socials-container">
+					<!-- Github -->
+					<a class="socials mt-1" href="https://github.com/null-usr" role="button" title="GitHub">
+						<div class="icon-container">
+							<span><i class="fab fa-github fa-2x"></i></span>
+						</div>
+					</a>
+					<!-- linkedin -->
+					<a class="socials  mt-1" href="https://www.linkedin.com/in/n-clarke/" title="LinkedIn">
+						<div class="icon-container">
+							<span><i class="fab fa-linkedin fa-2x"></i></span>	
+						</div>
+					</a>
+					<!-- CV -->
+					<a class="socials mt-1" href="/resume" title="Resume">
+						<div class="icon-container">
+							<span><i class="fas fa-file-pdf fa-2x"></i></span>	
+						</div>
+					</a>
+					<!-- <a class="btn btn-outline-light btn-floating m-1" href="/resume">
+						<i class="fas fa-file-pdf fa-2x"></i>
+					</a> -->
+				</section>
+				<!-- Section: Social media -->
+			</div>
+		</footer>
+	</div>
 	<!-- Footer -->
 </div>

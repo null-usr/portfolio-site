@@ -128,11 +128,17 @@ a {
   background-color: #c0adf0;
   color: black;
 }
+.main-sidebar .sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 @media screen and (max-width: 1060px) {
   .main-sidebar {
     width: 100% !important;
     height: auto;
     position: relative;
+    display: block;
   }
 }
 .main-sidebar a, .main-sidebar p.description {
@@ -177,7 +183,6 @@ a {
   text-align: right;
   display: block;
   padding-right: 50px;
-  margin-top: 5rem;
   /* constraint for smaller screens */
 }
 @media screen and (max-width: 1060px) {
@@ -279,10 +284,8 @@ a {
   color: #c0adf0;
 }
 .main-sidebar .footer-bottom {
-  position: absolute;
   margin: auto;
   display: block;
-  bottom: 0;
 }
 @media screen and (max-width: 1060px) {
   .main-sidebar .footer-bottom {

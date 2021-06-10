@@ -1,5 +1,4 @@
 .main-sidebar {
-
 	::selection{
 		background-color:$lavender;
 		color: black;
@@ -23,11 +22,18 @@
 
 	font-size: 1em;
 
+	.sidebar-inner{
+		display:flex;
+		flex-direction:  column;
+		justify-content: space-between;
+	}
+
 	/* constraint for smaller screens (see includes/mixins) */
 	@include constrain($med){
 		width: 100% !important;
 		height: auto;
 		position: relative;
+		display: block;
 	}
 
 	a, p.description {
@@ -71,7 +77,7 @@
 		text-align: right;
 		display:block;
 		padding-right:50px;
-		margin-top: 5rem;
+		//margin-top: 5rem;
 		//position:absolute;
 		//top:50%;
 
@@ -196,10 +202,10 @@
 	}
 
 	.footer-bottom{
-		position: absolute;
+		//position: absolute;
 		margin: auto;
 		display:block;
-		bottom: 0;
+		//bottom: 0;
 	
 		@include constrain($med){
 			position: relative;
