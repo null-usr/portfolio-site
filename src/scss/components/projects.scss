@@ -76,6 +76,7 @@
 			.project-thumb-image{
 				position: relative;
 				flex-grow: 1;
+				pointer-events: none;
 			}
 
 		}
@@ -106,6 +107,7 @@
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .project-thumb:hover .project-thumb-inner{
+	
 	transform: rotateY(180deg);
 }
 

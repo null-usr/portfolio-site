@@ -121,6 +121,12 @@
 		}
 	}
 
+	#resume-nav{
+		@include constrain_inv($small){
+			display:none;
+		}
+	}
+
 	.android-pills{
 		display: none;
 
@@ -193,7 +199,7 @@
 				.fa-linkedin{
 					color:#2867B2;
 				}
-				.fa-file-pdf{
+				.fa-portrait{
 					color:$lavender;
 				}
 			}

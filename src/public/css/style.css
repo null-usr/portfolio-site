@@ -27,6 +27,10 @@ a {
   color: #c0adf0;
 }
 
+.main-page {
+  min-height: 100vh;
+}
+
 .main-content {
   margin-left: 20%;
   transition: margin-left 0.5s;
@@ -280,7 +284,7 @@ a {
 .main-sidebar .socials-container > a:hover span .fa-linkedin {
   color: #2867B2;
 }
-.main-sidebar .socials-container > a:hover span .fa-file-pdf {
+.main-sidebar .socials-container > a:hover span .fa-portrait {
   color: #c0adf0;
 }
 .main-sidebar .footer-bottom {
@@ -416,6 +420,7 @@ a {
 .project-thumb .project-thumb-inner .project-thumb-front .project-thumb-image {
   position: relative;
   flex-grow: 1;
+  pointer-events: none;
 }
 .project-thumb .project-thumb-inner .project-thumb-back {
   background-color: white;

@@ -1,0 +1,8 @@
+{
+	"id": 5,
+	"name": "Ferrohound Portfolio",
+	"summary": "Art portfolio site for Ferrohound build using Angular",
+	"content": "/projects/ferrohound-portfolio.md",
+	"tags": ["angular"],
+	"slug":"ferrohound-portfolio"
+}
