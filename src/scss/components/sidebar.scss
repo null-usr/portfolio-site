@@ -122,7 +122,7 @@
 	}
 
 	#resume-nav{
-		@include constrain_inv($small){
+		@include inv_constrain($small){
 			display:none;
 		}
 	}
