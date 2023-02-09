@@ -1,6 +1,6 @@
 {
 	"id": 0,
-	"name": "Portfolio site",
+	"name": "nclarke.dev",
 	"summary": "Nodejs and express project. The site you're on right now!",
 	"content": "/projects/portfolio_site.md",
 	"tags": ["node"],

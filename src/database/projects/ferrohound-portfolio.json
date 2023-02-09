@@ -3,6 +3,7 @@
 	"name": "Ferrohound Portfolio",
 	"summary": "Art portfolio site for Ferrohound build using Angular",
 	"content": "/projects/ferrohound-portfolio.md",
+	"thumb": "/projects/ferrohound-portfolio/thumb.png",
 	"tags": ["angular"],
 	"slug":"ferrohound-portfolio"
 }

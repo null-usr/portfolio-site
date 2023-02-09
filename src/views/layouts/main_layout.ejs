@@ -20,6 +20,9 @@
     <!-- WINBOX -->
     <script src="/winbox/winbox.bundle.js"></script>
 
+    <!-- GSAP -->
+    <!-- <script src="/gsap/gsap.min.js"></script> -->
+
     <!-- Fontawesome https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers -->
     <script defer src="/fontawesome/js/brands.js"></script>
     <script defer src="/fontawesome/js/solid.js"></script>
@@ -224,19 +227,22 @@
         <%- include("../partials/nav/_sidebar");%> 
     </aside>
     <main id="main-content" class="main-content p-0 <%= root === '/resume' ? "h-100" : "" %>">
-        <!-- TOGGLE NAVBAR ELEMENTS -->
-        <a href="javascript:void(0)" onclick="openNav()" id="nav-open" class="nav-toggle" title="Open Sidebar">
-            <img src="/assets/img/open_arrow.svg">
-        </a>
-        <%- body  %> 
+        <div style="flex-grow: 1">
+            <!-- TOGGLE NAVBAR ELEMENTS -->
+            <a href="javascript:void(0)" onclick="openNav()" id="nav-open" class="nav-toggle" title="Open Sidebar">
+                <img src="/assets/img/open_arrow.svg">
+            </a>
+            <%- body  %> 
+
+        </div>
         <%- include("../partials/_footer");%> 
     </main>
 
     <!-- open and closing navbar -->
     <script>
         function openNav() {
-            $("#main-sidebar").css("width", "20%");
-            $("#main-content").css("marginLeft", "20%");
+            $("#main-sidebar").css("width", "320px");
+            $("#main-content").css("marginLeft", "320px");
 
             //button display hidden
             $("#nav-open").css("display", "none");

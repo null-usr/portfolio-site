@@ -1,0 +1,9 @@
+{
+	"id": 6,
+	"name": "Xorbi Pocket",
+	"summary": "Website for the Xorbi mobile AR game",
+	"content": "/projects/xorbi.md",
+	"thumb": "/projects/xorbi/thumb.svg",
+	"tags": ["react"],
+	"slug":"xorbi"
+}

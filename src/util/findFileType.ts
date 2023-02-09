@@ -6,11 +6,6 @@
 import path from 'path';
 import fs from 'fs';
 
-/*
-	ie) findFileType('../LiteScript',/\.html$/,function(filename){
-    console.log('-- found: ',filename);
-});
-*/
 export function findFileType(
     startPath: string,
     filter: RegExp,
@@ -28,12 +23,4 @@ export function findFileType(
             findFileType(filename, filter, callback); //recurse
         } else if (filter.test(filename)) callback(filename);
     });
-    /*for(var i=0;i<files.length;i++){
-        var filename=path.join(startPath,files[i]);
-        var stat = fs.lstatSync(filename);
-        if (stat.isDirectory()){
-            findFileType(filename,filter,callback); //recurse
-        }
-        else if (filter.test(filename)) callback(filename);
-    };*/
 }

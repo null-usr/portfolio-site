@@ -1,27 +1,48 @@
 <div class="container">
-	<header class="blog-header py-3">
-	  <div class="row flex-nowrap justify-content-between align-items-center">
-		
-	  </div>
-	</header>
-  
-	<main class="container mb-3">
-		<div class="p-4 p-md-5 mb-4 text-white rounded project-hero">
-			<div class="col-md-8 px-0">
-			<h1 class="display-4 fst-italic"><i>PROJECTS</i></h1>
-			<hr>
-			<p class="lead my-3">Here are some my hobby and commissioned projects I've worked on over the years. Some projects are on the backburner, some are
-				being actively worked on, but they'll all be completed one day someday...
-				<br>Some of them also have their code uploaded to GitHub if you'd like to take a look.
-				<br><br>For my industry work please take a look at my <a class="text-white" href="/resume">CV</a> or <a class="text-white" href="/about">contact me</a> directly.
-			</p>
-			</div>
-		</div>
-		
-		<div class="project-thumb-container rounded-white px-md-3 py-md-5 mb-3">
-			<% projects.forEach( project => { %>
-				<%- include("project_thumb", { project: project });%> 
-			<% }); %> 
-		</div>
-	</main>
+    <header class="blog-header py-3">
+        <div
+            class="row flex-nowrap justify-content-between align-items-center"
+        ></div>
+    </header>
+
+    <main class="container mb-3">
+        <div class="p-4 p-md-5 mb-4 text-white rounded project-hero">
+            <div class="row">
+                <div class="col-md-8 px-0">
+                    <h1 class="display-4 fst-italic"><i>PROJECTS</i></h1>
+                    <hr />
+                    <p class="lead my-3">
+                        Here are some my hobby and commissioned projects I've
+                        worked on over the years. Some projects are on the
+                        backburner, some are being actively worked on, but
+                        they'll all be completed one day someday... <br />Some
+                        of them also have their code uploaded to GitHub if you'd
+                        like to take a look. <br /><br />For my industry work
+                        please take a look at my
+                        <a class="text-white" href="/resume">CV</a> or
+                        <a class="text-white" href="/about">contact me</a>
+                        directly.
+                    </p>
+                </div>
+                <div class="col-lg-4 mr-auto d-none d-lg-block">
+                    <div
+                        style="
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+							align-items: center;
+                        "
+                    >
+                        <img width="75%" src="/assets/img/code.svg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-thumb-container rounded-white px-md-3 py-md-5 mb-3">
+            <% projects.forEach( project => { %> <%- include("project_thumb", {
+            project: project });%> <% }); %>
+        </div>
+    </main>
 </div>

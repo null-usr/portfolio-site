@@ -1,0 +1,9 @@
+{
+	"id": 8,
+	"name": "Night Shift",
+	"summary": "I called my ex, but I don't think what picked up was her.",
+	"content": "/projects/night-shift.md",
+	"thumb": "/projects/night-shift/thumb.svg",
+	"tags": ["godot, gamedev"],
+	"slug":"night-shift"
+}

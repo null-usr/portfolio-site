@@ -53,19 +53,6 @@ export class ResourceLoader {
             }
         );
 
-        /*const dir = fs.readdirSync(path.join(__dirname, "..", 'database', type));
-		const help_me = dir.filter( (file: string) => {
-			return file.includes('.json');
-			}).forEach((file) => {
-				const data = fs.readFileSync(
-					path.join(
-						__dirname, "..", 'database', type, file),
-						 'utf8');
-				
-				const content = JSON.parse( data ) as T;
-				out.push( content );
-			});*/
-
         return out;
     }
 }

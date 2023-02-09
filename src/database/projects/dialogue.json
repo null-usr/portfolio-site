@@ -1,0 +1,8 @@
+{
+	"id": 7,
+	"name": "Dialogue Editor",
+	"summary": "Hopefully making my life much easier!",
+	"content": "/projects/dialogue.md",
+	"tags": ["react, electron"],
+	"slug":"dialogue"
+}

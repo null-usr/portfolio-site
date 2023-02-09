@@ -27,11 +27,16 @@ a {
 }
 
 .main-page{
-	min-height: 100vh;
+	
 }
 
 .main-content{
-	margin-left: 20%;
+	margin-left: 320px;
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	//padding: 1px 16px;
 
 	transition: margin-left .5s;
@@ -60,14 +65,9 @@ a {
 
 .tag{
 	padding: 3px;
-	// ::selection{
-	// 	background-color:$lavender;
-	// 	color: black;
-	// }
+	cursor: default;
 	&:hover{
 		background-color:$lavender;
-		border: 1px solid;
-		border-color: inherit;
 	}
 }
 

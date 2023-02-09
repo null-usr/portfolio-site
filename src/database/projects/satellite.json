@@ -1,0 +1,9 @@
+{
+	"id": 2,
+	"name": "Satellite",
+	"summary": "Space-themed 2D game made using Love2D",
+	"content": "/projects/satellite.md",
+	"thumb": "/projects/satellite/thumb.svg",
+	"tags": ["lua"],
+	"slug":"satellite"
+}
