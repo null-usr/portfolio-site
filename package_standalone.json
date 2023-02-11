@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "description": "Neil Clarke Portfolio Site",
-  "main": "./dist/server.js",
+  "main": "server.js",
   "scripts": {
     "prettier": "prettier --config .prettierrc \"src/**/*.ts\" --write",
     "lint": "eslint . --ext .ts",
     "sass": "sass --watch src/scss/index.scss:src/public/css/style.css -I node_modules",
     "build-sass": "sass src/scss/index.scss:src/public/css/style.css -I node_modules",
     "build-sass-broken": "node-sass src/scss/index.scss src/public/css/style.css --importer node_modules/node-sass-import",
-    "start": "node ./dist/server.js",
+    "start": "node .",
     "dev": "nodemon",
     "clean": "rm -rf dist/ || true",
     "build:linux": "npm run clean && npm run build-sass && chmod +x ./scripts/build.sh && ./scripts/build.sh",
@@ -20,7 +20,7 @@
     "tsc": "tsc",
     "deploy": "npm run build && chmod +x ./scripts/deploy.sh && ./scripts/deploy.sh",
     "deploy:windows": "npm run build:windows && chmod +x ./scripts/deploy.sh && sh ./scripts/deploy.sh",
-    "postinstall": "npm run build-sass && chmod +x ./scripts/heroku.sh && ./scripts/heroku.sh"
+    "postinstall": ""
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
