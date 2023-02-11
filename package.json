@@ -20,7 +20,7 @@
     "tsc": "tsc",
     "deploy": "npm run build && chmod +x ./scripts/deploy.sh && ./scripts/deploy.sh",
     "deploy:windows": "npm run build:windows && chmod +x ./scripts/deploy.sh && sh ./scripts/deploy.sh",
-    "postinstall": "npm run build-sass && chmod +x ./scripts/heroku.sh && ./scripts/heroku.sh"
+    "postinstall": "chmod +x ./scripts/heroku.sh && ./scripts/heroku.sh"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
