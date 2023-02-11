@@ -14,9 +14,8 @@
                     <hr />
                     <div class="col-md-8 px-0">
                         <p class="lead my-3">
-                            My name is Neil Clarke and I'm a Software Engineer. <br />
-                            I specialize in Web and Game development, but I have a broad range of interests so I like to keep an open mind. <br /><br />
-                            And as I learn more, this site will change too! In the meantime, check out my <a class="text-white" href="/projects">projects</a>, my <a class="text-white" href="/blog">blog posts</a> if you're curious about what I've been up to or my skillset down below if you'd like.
+                            My name is Neil Clarke; I'm a Software Engineer specializing in Web and Game development! <br /><br />
+                            I have a lot of interests and as I learn more, this site will change too! <br /> In the meantime, check out my <a class="text-white" href="/projects">projects</a>, my <a class="text-white" href="/blog">blog posts</a> if you're curious about what I've been up to or my skillset down below if you'd like.
                         </p>
                         <p class="lead mb-0">
                             <a
@@ -28,15 +27,10 @@
                     </div>
                 </div>
             </div>
-            <div class="text-black col-lg-4 d-none d-lg-block border">
+            <div style="overflow: hidden; position: relative;" class="text-black col-lg-4 d-none d-lg-block border">
                 <div class="home-logo ml-0 pl-0" title="Placeholder Graphic">
-                    <object
-                        class=""
-                        title="The gears of time stop for no one..."
-                        width="200px"
-                        type="image/svg+xml"
-                        data="/assets/img/simple_gear_animation.svg"
-                    ></object>
+                    <img style="position: absolute; display: inline;" class="main_gear gear" width="300px" src="/assets/img/simple_gear.svg">
+                    <img style="position: absolute; display: inline;" class="secondary_gear gear" width="300px" src="/assets/img/simple_gear.svg">
                 </div>
             </div>
         </div>
@@ -148,7 +142,7 @@
         </div>
 
         <!-- Link to projects and blog -->
-        <div class="row mb-2">
+        <div style="padding: 8px;" class="row">
             <div class="col-md-6 text-center">
                 <p class="m-2">
                     <a href="/blog" class="btn btn-outline-dark"
@@ -255,8 +249,8 @@
                             <span class="tag lead">Bash</span>,
                             <span class="tag lead">PostgreSQL</span>,
                             <span class="tag lead">Arduino</span>,
-                            <span class="tag lead">GIMP</span>,
-                            <span class="tag lead">Inkscape</span>,
+                            <span class="tag lead">CSP</span>,
+                            <span class="tag lead">Affinity Designer</span>,
                             <span class="tag lead">Blender</span>
                         </div>
                     </div>
@@ -264,4 +258,44 @@
             </div>
         </div>
     </main>
+    <script>
+        let tl = gsap.timeline();
+        tl.set(
+            ".gear",
+            {
+                transformOrigin: 'center'
+            }
+        ).set(
+            ".main_gear",
+            {
+                x: "-50%",
+                y: "-15%",
+            }
+        ).set(
+            ".secondary_gear",
+            {
+                x: "10%",
+                y: "40%",
+                rotation: 10
+                // scale: 0.8
+            }
+        ).to(
+            ".main_gear",
+            {
+                rotation: "360",
+                duration: 10,
+                ease: "none",
+                repeat: -1
+            }
+        ).to(
+            ".secondary_gear",
+            {
+                rotation: "-=360",
+                duration: 10,
+                ease: "none",
+                repeat: -1
+            },
+            "<"
+        )
+    </script>
 </div>

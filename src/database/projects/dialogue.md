@@ -1,4 +1,4 @@
-# Dialogue Editor
+# Bark (tentative)
 
 A Standalone dialogue editor (more accurately a JSON relational database editor). I've used a handful of dialogue editors in the past and I've found that they tend to be either too rigid in their structured output or not structured much at all. I wanted to create a tool independent of any specific game engine where I could quickly define and save my own nodes to suit whatever project I'm working on. 
 
