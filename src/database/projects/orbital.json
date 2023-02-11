@@ -1,8 +1,0 @@
-{
-	"id": 2,
-	"name": "Orbital",
-	"summary": "Space-themed 2D game made using Love2D",
-	"content": "/projects/orbital.md",
-	"tags": ["lua"],
-	"slug":"orbital"
-}

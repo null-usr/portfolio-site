@@ -3,6 +3,7 @@
 	"name": "Dungeon Generator",
 	"summary": "Procedural 2D map generator",
 	"content": "/projects/dungeon_generator.md",
+	"thumb": "/projects/dungeon-generator/thumb.svg",
 	"tags": ["c++"],
 	"slug":"dungeon-generator"
 }

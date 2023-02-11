@@ -6,9 +6,9 @@
 	justify-content: center;
 	align-items: center;
 
-	@include constrain($med){
-		display: none;
-	}
+	// @include constrain($med){
+	// 	display: none;
+	// }
 }
 .divider-custom .divider-custom-line {
 	width: 100%;

@@ -1,0 +1,10 @@
+{
+    "id": 2,
+    "createdAt": "2023-02-07T18:25:43.511Z",
+	"title": "2023 Update",
+    "summary": "Here we are again in 2023!",
+    "content": "blog/post2.md",
+	"tags": [],
+    "thumbnail": "/images/post1/thumb.png",
+    "slug": "post2"
+}

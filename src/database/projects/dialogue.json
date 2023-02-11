@@ -1,0 +1,9 @@
+{
+	"id": 7,
+	"name": "Bark (tentative)",
+	"summary": "Hopefully making my life much easier!",
+	"content": "/projects/dialogue.md",
+	"thumb": "/projects/dialogue/bark.svg",
+	"tags": ["react, electron"],
+	"slug":"dialogue"
+}

@@ -1,3 +1,4 @@
+import { config } from 'dotenv';
 import express, { NextFunction, Request, Response } from 'express';
 import expressLayouts from 'express-ejs-layouts';
 import path from 'path';
@@ -13,9 +14,8 @@ import posts_controller from './controllers/posts';
 import console_controller from './controllers/console';
 
 import static_pages from './controllers/static_pages';
-import * as dotenv from 'dotenv';
 
-dotenv.config();
+config();
 
 const app: express.Application = express();
 const port = process.env.PORT || 8080;
@@ -86,6 +86,10 @@ app.use(
             'fontawesome-free'
         )
     )
+);
+app.use(
+    '/gsap',
+    express.static(path.join(process.cwd(), 'node_modules', 'gsap', 'dist'))
 );
 
 // app.get('/', function (req: Request, res: Response) {

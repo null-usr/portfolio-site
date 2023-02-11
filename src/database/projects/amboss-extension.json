@@ -3,6 +3,7 @@
 	"name": "Amboss Extension",
 	"summary": "Chrome extension for estimating SI Units from Reference Units on the AMBOSS Platform",
 	"content": "/projects/amboss-extension.md",
+	"thumb": "/projects/amboss-extension/thumb.png",
 	"tags": ["extensions"],
 	"slug":"amboss-extension"
 }

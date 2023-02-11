@@ -10,7 +10,7 @@
 	background-color: $background;
 
 	height: 100%;
-	width: 20%;
+	width: 320px;
 	//max-width:max-content;
 	margin: 0;
 	padding: 0;
@@ -121,9 +121,11 @@
 		}
 	}
 
-	#resume-nav{
-		@include inv_constrain($small){
-			display:none;
+	.resume-nav{
+		display:none;
+
+		@include constrain($small){
+			display:block;
 		}
 	}
 
