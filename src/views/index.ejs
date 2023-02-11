@@ -36,8 +36,8 @@
         </div>
 
         <!-- Featured post and project-->
-        <div style="display: flex; gap: 16px;">
-            <div style="height: 100%; width: 50%;">
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <div style="height: 100%; flex: 1;">
 				<div style="border: 1px solid grey; border-radius: 6px;">
                     <h2 class="
                             mb-2
@@ -71,21 +71,22 @@
                             >
 							</div>
                         </div>
-                        <div
-                            style="width: 200px; height: 200px; border-radius: 6px; background-color: #292929;
-                            display: grid !important;
-                            justify-content: center;
-                            align-content: center;"
-                            class="col-auto d-none d-lg-block"
-                        >
-						<img style="max-height:200px; max-width:200px;" src="<%=
-                        featured_post.thumb ? featured_post.thumb :
-                        "/assets/img/default_blog_image.svg" %>" alt="">
+                        <div class="col-auto d-none d-md-block">
+                            <div
+                                style="width: 200px; height: 200px; border-radius: 6px; background-color: #292929;
+                                display: grid !important;
+                                justify-content: center;
+                                align-content: center;"
+                            >
+                            <img style="max-height:200px; max-width:200px;" src="<%=
+                            featured_post.thumb ? featured_post.thumb :
+                            "/assets/img/default_blog_image.svg" %>" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div style="height: 100%; width: 50%">
+            <div style="height: 100%; flex: 1;">
                 <div style="border: 1px solid grey; border-radius: 6px;">
                     <h2 class="
                             mb-2
@@ -121,20 +122,21 @@
 								>
 							</div>
                         </div>
-                        <div
-                            style=" width: 200px;
-                            height: 200px;
-                            border-radius: 6px;
-                            background-color: #292929;
-                            display: grid !important;
-                            justify-content: center;
-                            align-content: center;"
-                            class="col-auto d-none d-lg-block"
-                        >
-                            <img style="width: 100%; height: 100%; max-height:200px; max-width:200px;"
-                            src="<%= featured_project.thumb ?
-                            featured_project.thumb :
-                            "/assets/img/default_project_image.svg" %>" alt="">
+                        <div class="col-auto d-none d-md-block">
+                            <div
+                                style=" width: 200px;
+                                height: 200px;
+                                border-radius: 6px;
+                                background-color: #292929;
+                                display: grid !important;
+                                justify-content: center;
+                                align-content: center;"
+                            >
+                                <img style="width: 100%; height: 100%; max-height:200px; max-width:200px;"
+                                src="<%= featured_project.thumb ?
+                                featured_project.thumb :
+                                "/assets/img/default_project_image.svg" %>" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -166,8 +168,7 @@
                     <h1 class="fst-italic">Arsenal</h1>
                     <p>
                         Suite of some of the programming languages, tools and
-                        software that I've encountered while working on my hobby
-                        projects and throughout my professional career.
+                        software that I've become familiar with throughout my professional and recreational career.
                     </p>
                 </div>
                 <hr />
