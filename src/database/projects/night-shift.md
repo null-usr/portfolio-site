@@ -6,7 +6,7 @@
 
 ---
 
-Night Shift is a visual novel created by [Diana Nguyen](https://dianangu.com/) (Go check her out!) as the artist and character designer, Ferrohound on additional assets & the script and myself as the lead programmer and writer. We borrowed some royalty-free tracks and some tracks from [Somnium Music](https://www.youtube.com/@SomniumMusic) (huge thanks!) for the game's soundtrack.
+Night Shift is a visual novel created by [Rex](https://twitter.com/rrrekkusu) (Go check her out!) as the artist and character designer, Ferrohound on additional assets & the script and myself as the lead programmer and writer. We borrowed some royalty-free tracks and some tracks from [Somnium Music](https://www.youtube.com/@SomniumMusic) (huge thanks!) for the game's soundtrack.
 
 We originally made it to participate in itch.io's 2020 Spooktober Visual Novel Halloween gamejam. I chose to use [Godot](https://godotengine.org/) over Ren'py because I wanted to use this project as the groundwork for my future game project workflows. It was actually this game that motivated me to develop my own [dialogue editor](/projects/dialogue) to suit the needs we had for this and future projects!
 
