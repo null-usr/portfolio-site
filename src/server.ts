@@ -56,12 +56,12 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // https://expressjs.com/en/starter/static-files.html
 // https://stackoverflow.com/questions/30473993/how-to-use-npm-installed-bootstrap-in-express
-app.use(
-    '/bootstrap',
-    express.static(
-        path.join(process.cwd(), 'node_modules', 'bootstrap', 'dist')
-    )
-);
+// app.use(
+//     '/bootstrap',
+//     express.static(
+//         path.join(process.cwd(), 'node_modules', 'bootstrap', 'dist')
+//     )
+// );
 app.use(
     '/jquery',
     express.static(path.join(process.cwd(), 'node_modules', 'jquery', 'dist'))

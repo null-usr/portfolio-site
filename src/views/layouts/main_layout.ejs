@@ -8,8 +8,6 @@
     <meta name="generator" content="Hugo 0.83.1">
     <title><%- title  %> | Neil Clarke</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
-
 	<!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
@@ -29,13 +27,10 @@
     <script defer src="/fontawesome/js/fontawesome.js"></script>
 
 
-    <!-- jquery and bootstrap -->
-    <!-- Bootstrap core CSS -->
+    <!-- jquery -->
 	<link href="/css/style.css" rel="stylesheet">
 
     <script src="/jquery/jquery.min.js"></script>
-    <!-- <script src="/popper/popper.min.js"></script> -->
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
 
     <style>
       .bd-placeholder-img {
@@ -227,7 +222,7 @@
         <%- include("../partials/nav/_sidebar");%> 
     </aside>
     <main id="main-content" class="main-content p-0 <%= root === '/resume' ? "h-100" : "" %>">
-        <div style="flex-grow: 1">
+        <div class="main-content-inner" style="flex-grow: 1">
             <!-- TOGGLE NAVBAR ELEMENTS -->
             <a href="javascript:void(0)" onclick="openNav()" id="nav-open" class="nav-toggle" title="Open Sidebar">
                 <img src="/assets/img/open_arrow.svg">

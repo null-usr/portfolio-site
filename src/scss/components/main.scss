@@ -41,9 +41,23 @@ a {
 
 	transition: margin-left .5s;
 
+	.main-content-inner{
+		padding: 64px;
+	}
+
 	@include constrain($med){
+		.main-content-inner{
+			padding: 32px;
+		}
 		margin-left: 0;
 	}
+
+	@include constrain($small){
+		.main-content-inner{
+			padding: 8px;
+		}
+	}
+
 }
 
 //rounded box with black outline
@@ -104,4 +118,9 @@ a {
 			justify-content: space-around;
 		}
 	}
+}
+
+.col{
+	display: flex;
+	flex-direction: column;
 }

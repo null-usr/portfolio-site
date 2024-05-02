@@ -1,4 +1,4 @@
-<div class="text-white h-100 pb-0 pt-4 px-1 sidebar-inner">
+<div class="text-white sidebar-inner col" style="height: 100vh; justify-content: space-between; align-items: center;">
 	<!-- MASTHEAD -->
 	<div>
 		<a href="/" class="home" title="HOME">
@@ -27,56 +27,41 @@
 	</a>
 	
 	<!-- NAV ELEMENTS -->
-	<div>
+	<div style="width: 100%;">
 		<nav class="sidebar-pills" id="sidebar">
-			<ul class="nav nav-pills flex-md-column">
-				<li class="">
+			<div class="nav nav-pills">
+				<div class="nav-pill nav-link" onclick="location.href='/projects'">
 					<a href="/projects" class="nav-link <%= root === '/projects' ? "text-white" : "" %>">
 						<span class="">Projects</span> 
-						<!-- in order to make the text disappear on smaller screens w/ bootstrap -->
 						<!-- <span class=" d-none d-sm-inline">About</span> -->
-						<i class="fas fa-laptop-code"></i>
 					</a>
-				</li>
-				<li class="">
-					<a href="/blog" class="nav-link  <%= root === '/blog' ? "text-white" : "" %>">
+					<i class="fas fa-laptop-code"></i>
+				</div>
+				<div class="nav-pill nav-link"  onclick="location.href='/blog'">
+					<a href="/blog" class="nav-link <%= root === '/blog' ? "text-white" : "" %>">
 						<span class="">Blog</span>
-						<i class="fas fa-comment-alt"></i>
 					</a>
-				</li>
-				<li class="">
-					<a href="/about" class="nav-link  <%= root === '/about' ? "text-white" : "" %>">
+					<i class="fas fa-comment-alt"></i>
+				</div>
+				<div class="nav-pill nav-link"  onclick="location.href='/about'">
+					<a href="/about" class="nav-link <%= root === '/about' ? "text-white" : "" %>">
 						<span class="">About</span>
-						<i class="fas fa-info-circle"></i>
 					</a>
-				</li>
-				<li class="">
+					<i class="fas fa-info-circle"></i>
+				</div>
+				<div class="nav-pill nav-link"  onclick="location.href='/resume'">
 					<a href="/resume" class="nav-link resume-nav <%= root === '/resume' ? "text-white" : "" %>" id="">
 						<span class="">CV</span>
-						<i class="fas fa-portrait"></i>
 					</a>
-				</li>
-				<li class="">
+					<i class="fas fa-portrait"></i>
+				</div>
+				<div class="nav-pill nav-link"  onclick="location.href='/console'">
 					<a href="/console" class="nav-link <%= root === '/console' ? "text-white" : "" %>" id="console-nav">
 						<span class="">Console</span>
-						<i class="fas fa-terminal"></i>
 					</a>
-				</li>
-				<!-- <li class="dropdown">
-					<a href="#" class="nav-link dropdown-toggle px-sm-0 px-1 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-						<i class="fs-5 bi-bootstrap"></i><span class="ms-1 d-none d-sm-inline">Bootstrap</span>
-					</a>
-					<ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
-						<li><a class="dropdown-item" href="#">New project...</a></li>
-						<li><a class="dropdown-item" href="#">Settings</a></li>
-						<li><a class="dropdown-item" href="#">Profile</a></li>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
-						<li><a class="dropdown-item" href="#">Sign out</a></li>
-					</ul>
-				</li> -->
-			</ul>
+					<i class="fas fa-terminal"></i>
+				</div>
+			</div>
 		</nav>
 	</div>
 	
@@ -92,7 +77,7 @@
 					</p>
 				</section>
 				<!-- Section: Social media -->
-				<section class="mb-2 socials-container">
+				<section class="socials-container">
 					<!-- Github -->
 					<a class="socials mt-1" href="https://github.com/null-usr" role="button" title="GitHub">
 						<div class="icon-container">

@@ -1,9 +1,9 @@
 .blog-footer{
 	// position: absolute;
 	margin-top: 0;
-	bottom: 0;
-	margin-left: auto;
-    margin-right: auto;
+	color: white;
+	width: 100%;
+	text-align: center;
 
 	// outline: 1px solid #fff;
     // outline-offset: -10px;
@@ -15,4 +15,8 @@
 	@include constrain($med){
 		display: contents;
 	}
+}
+
+.h-100{
+	height: 100%;
 }

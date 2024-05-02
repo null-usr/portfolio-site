@@ -6,7 +6,6 @@
 import fs from 'fs';
 import path from 'path';
 import marked from 'marked';
-import DOMpurify from 'dompurify';
 import { findFileType } from '../util/findFileType';
 
 export class ResourceLoader {
@@ -28,7 +27,7 @@ export class ResourceLoader {
             path.join(__dirname, '..', 'database', type, name + '.md'),
             'utf8'
         );
-        const output = marked(content);
+        const output = marked.parse(content) as string;
         //output = DOMpurify.sanitize(output);
 
         //console.log(output);
@@ -46,7 +45,7 @@ export class ResourceLoader {
         findFileType(
             path.join(__dirname, '..', 'database', type),
             /\.json$/,
-            (filename) => {
+            (filename: string) => {
                 const data = fs.readFileSync(filename, 'utf-8');
                 const content = JSON.parse(data) as T;
                 out.push(content);

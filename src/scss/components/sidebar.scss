@@ -76,7 +76,9 @@
 		font-size: 1.5em;
 		text-align: right;
 		display:block;
-		padding-right:50px;
+		padding: 0px 64px;
+		margin-bottom: 64px;
+		// padding-right:50px;
 		//margin-top: 5rem;
 		//position:absolute;
 		//top:50%;
@@ -99,11 +101,28 @@
 			padding-right: 5px;
 			float: left;
 		}
+
+		.nav-pills{
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+
+			a{
+				display: inline-block;
+			}
+
+			.nav-pill{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
 	}
 	
 	.nav-link{
 		display: block;
 		color: grey;
+		cursor: pointer;
 
 		@include constrain($small){
 			color: white;
@@ -113,6 +132,9 @@
 
 	.nav-link:hover{
 		color:white;
+		a{
+			color: white;
+		}
 	}
 
 	#console-nav{
@@ -153,6 +175,13 @@
 
 	// ======================== ICON COLOURS =====================
 	.socials-container{
+
+		display: flex;
+		justify-content: center;
+		gap: 8px;
+
+		margin-bottom: 16px;
+
 		>a{
 			display: inline-block;
 			padding: 10px;
@@ -222,6 +251,12 @@
 			display: none;
 		}
 	}
+
+	.sidebar-blurb{
+		padding: 0px 16px;
+		text-align: center;
+		margin-bottom: 32px;
+	}
 }
 
 //========================== RESPONSIVENESS ======================
@@ -235,6 +270,7 @@
 
 //hide the toggle elements when it gets too small
 .nav-toggle{
+	z-index: 1;
 	img{
 		width: 50px;
 	}
