@@ -224,12 +224,12 @@
     <main id="main-content" class="main-content p-0 <%= root === '/resume' ? "h-100" : "" %>">
         <div class="main-content-inner" style="flex-grow: 1">
             <!-- TOGGLE NAVBAR ELEMENTS -->
-            <a href="javascript:void(0)" onclick="openNav()" id="nav-open" class="nav-toggle" title="Open Sidebar">
-                <img src="/assets/img/open_arrow.svg">
-            </a>
             <%- body  %> 
-
+            
         </div>
+        <a href="javascript:void(0)" onclick="openNav()" id="nav-open" class="nav-toggle" title="Open Sidebar">
+            <img src="/assets/img/open_arrow.svg">
+        </a>
         <%- include("../partials/_footer");%> 
     </main>
 
