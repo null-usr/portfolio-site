@@ -257,15 +257,14 @@ a {
 }
 
 .main-sidebar {
-  overflow: hidden;
   color: white;
   background-color: #292929;
-  height: 100%;
+  height: 100vh;
+  overflow-y: scroll;
   width: 320px;
   margin: 0;
   padding: 0;
   position: fixed;
-  overflow: auto;
   transition: 0.3s;
   font-size: 1em;
   /* constraint for smaller screens (see includes/mixins) */
@@ -330,12 +329,10 @@ a {
   }
 }
 .main-sidebar .sidebar-pills {
-  transition: height 0.5s;
   overflow: hidden;
   font-size: 1.5em;
   text-align: right;
   display: block;
-  margin-bottom: 64px;
   /* constraint for smaller screens */
 }
 @media screen and (max-width: 1060px) {
@@ -351,7 +348,7 @@ a {
 .main-sidebar .sidebar-pills .nav-pills {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
 }
 .main-sidebar .sidebar-pills .nav-pills a {
   display: inline-block;

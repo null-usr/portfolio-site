@@ -34,9 +34,9 @@
         </div>
 
         <!-- Featured post and project-->
-        <div class="row" style="flex-wrap: wrap;">
-            <div style="height: 100%; flex-grow: 1; width: 450px;">
-				<div style="border: 2px solid #292929; border-radius: 3px;">
+        <div class="row" style="flex-wrap: wrap; align-items: stretch;">
+            <div style="flex-grow: 1; width: 450px;">
+				<div class="col" style="gap: 0px; height: 100%; border: 2px solid #292929; border-radius: 3px;">
                     <h2 class="
                             text-white
                             greyscale
@@ -44,7 +44,7 @@
                             style="padding: 8px;">
                         FEATURED POST
                     </h2>
-                    <div class='row' style="padding: 8px; flex-wrap: nowrap;">
+                    <div class='row' style="padding: 8px; flex-wrap: nowrap; height: 100%;">
                         <div style="border: 1px solid grey; padding: 8px; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
 							<div>
 								<h3 class="mb-0"><%= featured_post.title %></h3>
@@ -72,6 +72,7 @@
                         <div
                             style="width: 200px; height: 200px; border-radius: 3px; background-color: #292929;
                             display: grid !important;
+                            align-self: center;
                             flex: 0.7;
                             justify-content: center;
                             align-content: center;"
@@ -84,8 +85,8 @@
                     </div>
                 </div>
             </div>
-            <div style="height: 100%; width: 450px; flex-grow: 1;">
-                <div style="border: 2px solid #292929; border-radius: 3px;">
+            <div style="width: 450px; flex-grow: 1;">
+                <div class="col" style="gap: 0px; height: 100%; border: 2px solid #292929; border-radius: 3px;">
                     <h2 class="
                             mb-2
                             text-white
@@ -93,7 +94,7 @@
                         " style="padding: 8px;">
                         FEATURED PROJECT
                     </h2>
-                    <div class="row" style="padding: 8px; flex-wrap: nowrap;">
+                    <div class="row" style="padding: 8px; flex-wrap: nowrap; height: 100%;">
                         <div style="border: 1px solid grey; padding: 8px; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
 							<div>
 								<h3 class="mb-0"><%= featured_project.name %></h3>
@@ -123,6 +124,7 @@
                         <div
                             style=" width: 200px;
                             height: 200px;
+                            align-self: center;
                             border-radius: 3px;
                             flex: 0.7;
                             background-color: #292929;

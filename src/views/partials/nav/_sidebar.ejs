@@ -16,6 +16,47 @@
 				<div class="divider-custom-line"></div>
 			</div>
 		</div>
+
+		<!-- NAV ELEMENTS -->
+		<div class="desktop">
+			<div style="width: 200px; margin-top: 64px;">
+				<nav class="sidebar-pills" id="desktop-sidebar">
+					<div class="nav nav-pills">
+						<div class="nav-pill nav-link <%= root === '/projects' ? "nav-link-white" : "" %>" onclick="location.href='/projects'">
+							<a href="/projects" class="nav-link <%= root === '/projects' ? "nav-link-white" : "" %>">
+								<span class="">Projects</span> 
+								<!-- <span class=" d-none d-sm-inline">About</span> -->
+							</a>
+							<i class="fas fa-laptop-code"></i>
+						</div>
+						<div class="nav-pill nav-link <%= root === '/blog' ? "nav-link-white" : "" %>"  onclick="location.href='/blog'">
+							<a href="/blog" class="nav-link <%= root === '/blog' ? "nav-link-white" : "" %>">
+								<span class="">Blog</span>
+							</a>
+							<i class="fas fa-comment-alt"></i>
+						</div>
+						<div class="nav-pill nav-link <%= root === '/about' ? "nav-link-white" : "" %>"  onclick="location.href='/about'">
+							<a href="/about" class="nav-link <%= root === '/about' ? "nav-link-white" : "" %>">
+								<span class="">About</span>
+							</a>
+							<i class="fas fa-info-circle"></i>
+						</div>
+						<div class="nav-pill nav-link <%= root === '/resume' ? "nav-link-white" : "" %>"  onclick="location.href='/resume'">
+							<a href="/resume" class="nav-link resume-nav <%= root === '/resume' ? "nav-link-white" : "" %>" id="">
+								<span class="">CV</span>
+							</a>
+							<i class="fas fa-portrait"></i>
+						</div>
+						<div class="nav-pill nav-link <%= root === '/console' ? "nav-link-white" : "" %>"  onclick="location.href='/console'">
+							<a href="/console" class="nav-link <%= root === '/console' ? "nav-link-white" : "" %>" id="console-nav">
+								<span class="">Console</span>
+							</a>
+							<i class="fas fa-terminal"></i>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
 	</div>
 
 	<!-- TOGGLE NAVBAR ELEMENTS -->
@@ -27,46 +68,6 @@
 		<i class="fa fa-bars"></i>
 	</a>
 	
-	<!-- NAV ELEMENTS -->
-	<div class="desktop">
-		<div style="width: 200px;">
-			<nav class="sidebar-pills" id="desktop-sidebar">
-				<div class="nav nav-pills">
-					<div class="nav-pill nav-link <%= root === '/projects' ? "nav-link-white" : "" %>" onclick="location.href='/projects'">
-						<a href="/projects" class="nav-link <%= root === '/projects' ? "nav-link-white" : "" %>">
-							<span class="">Projects</span> 
-							<!-- <span class=" d-none d-sm-inline">About</span> -->
-						</a>
-						<i class="fas fa-laptop-code"></i>
-					</div>
-					<div class="nav-pill nav-link <%= root === '/blog' ? "nav-link-white" : "" %>"  onclick="location.href='/blog'">
-						<a href="/blog" class="nav-link <%= root === '/blog' ? "nav-link-white" : "" %>">
-							<span class="">Blog</span>
-						</a>
-						<i class="fas fa-comment-alt"></i>
-					</div>
-					<div class="nav-pill nav-link <%= root === '/about' ? "nav-link-white" : "" %>"  onclick="location.href='/about'">
-						<a href="/about" class="nav-link <%= root === '/about' ? "nav-link-white" : "" %>">
-							<span class="">About</span>
-						</a>
-						<i class="fas fa-info-circle"></i>
-					</div>
-					<div class="nav-pill nav-link <%= root === '/resume' ? "nav-link-white" : "" %>"  onclick="location.href='/resume'">
-						<a href="/resume" class="nav-link resume-nav <%= root === '/resume' ? "nav-link-white" : "" %>" id="">
-							<span class="">CV</span>
-						</a>
-						<i class="fas fa-portrait"></i>
-					</div>
-					<div class="nav-pill nav-link <%= root === '/console' ? "nav-link-white" : "" %>"  onclick="location.href='/console'">
-						<a href="/console" class="nav-link <%= root === '/console' ? "nav-link-white" : "" %>" id="console-nav">
-							<span class="">Console</span>
-						</a>
-						<i class="fas fa-terminal"></i>
-					</div>
-				</div>
-			</nav>
-		</div>
-	</div>
 
 	<div class="mobile-nav">
 		<div style="width: 100%;">
@@ -115,13 +116,13 @@
 	<div>
 		<footer class="text-center text-white footer-bottom">
 			<!-- Grid container -->
-			<div class="container p-4 hidden-sm-down">
+			<div class="">
 				<!-- Section: Text -->
-				<section class="mb-4 sidebar-blurb">
+				<!-- <section class="mb-4 sidebar-blurb">
 					<p>
 						(Barely) Social Media!<br>Find me at the links down below, or check out my CV down on the right.
 					</p>
-				</section>
+				</section> -->
 				<!-- Section: Social media -->
 				<section class="socials-container">
 					<!-- Github -->
@@ -142,7 +143,6 @@
 							<span><i class="fas fa-portrait fa-2x"></i></span>	
 						</div>
 					</a>
-					</a> -->
 				</section>
 				<!-- Section: Social media -->
 			</div>
