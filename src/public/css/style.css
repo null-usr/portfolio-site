@@ -260,7 +260,7 @@ a {
   color: white;
   background-color: #292929;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 320px;
   margin: 0;
   padding: 0;
