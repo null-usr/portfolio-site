@@ -1,34 +1,32 @@
-<div class="container">
+<div class="main-content-inner">
     <header class="blog-header py-3">
         <div
             class="row flex-nowrap justify-content-between align-items-center"
         ></div>
     </header>
 
-    <main class="container">
+    <main class="col" style="gap: 32px;">
         <!-- Header -->
-        <div class="row mb-4">
-            <div class="col-lg-8">
-                <div class="p-4 p-md-5 mb-4 text-white rounded home-hero h-100">
-                    <h1 class="display-4 fst-italic">Welcome to v1.1!</h1>
-                    <hr />
-                    <div class="col-md-8 px-0">
-                        <p class="lead my-3">
+        <div class="row">
+            <div class="col rounded home-hero" style="flex: 2; gap: 0px;">
+                    <h1 class="header-title text-white">Welcome to v1.1!</h1>
+                    <!-- <hr /> -->
+                    <div class="col" style="padding: 16px;">
+                        <p class="lead">
                             My name is Neil Clarke; I'm a Software Engineer specializing in Web and Game development! <br /><br />
-                            I have a lot of interests and as I learn more, this site will change too! <br /> In the meantime, check out my <a class="text-white" href="/projects">projects</a>, my <a class="text-white" href="/blog">blog posts</a> if you're curious about what I've been up to or my skillset down below if you'd like.
+                            I have a lot of interests and as I learn more, this site will change too! <br /> In the meantime, check out my <a href="/projects">projects</a>, my <a href="/blog">blog posts</a> if you're curious about what I've been up to or my skillset down below if you'd like.
                         </p>
-                        <p class="lead mb-0">
+                        <p class="lead">
                             <a
                                 href="/about"
-                                class="text-white fw-bold go-to-bottom mb-3"
-                                >Click hear to learn more about me...</a
+                                class=""
+                                >Click here to learn more about me...</a
                             >
                         </p>
                     </div>
-                </div>
             </div>
-            <div style="overflow: hidden; position: relative;" class="text-black col-lg-4 d-none d-lg-block border">
-                <div class="home-logo ml-0 pl-0" title="Placeholder Graphic">
+            <div style="overflow: hidden; position: relative; flex: 1; border: 2px solid #292929;" class="text-black col desktop">
+                <div class="home-logo" title="Placeholder Graphic">
                     <img style="position: absolute; display: inline;" class="main_gear gear" width="300px" src="/assets/img/simple_gear.svg">
                     <img style="position: absolute; display: inline;" class="secondary_gear gear" width="300px" src="/assets/img/simple_gear.svg">
                 </div>
@@ -36,18 +34,18 @@
         </div>
 
         <!-- Featured post and project-->
-        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-            <div style="height: 100%; flex: 1;">
-				<div style="border: 1px solid grey; border-radius: 6px;">
+        <div class="row" style="flex-wrap: wrap;">
+            <div style="height: 100%; flex-grow: 1; width: 450px;">
+				<div style="border: 2px solid #292929; border-radius: 3px;">
                     <h2 class="
-                            mb-2
                             text-white
                             greyscale
-                        ">
+                            "
+                            style="padding: 8px;">
                         FEATURED POST
                     </h2>
-                    <div style="padding: 8px; display: flex; gap: 8px;">
-                        <div style="border: 1px solid grey; padding: 8px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1;">
+                    <div class='row' style="padding: 8px; flex-wrap: nowrap;">
+                        <div style="border: 1px solid grey; padding: 8px; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
 							<div>
 								<h3 class="mb-0"><%= featured_post.title %></h3>
 								<hr />
@@ -71,32 +69,32 @@
                             >
 							</div>
                         </div>
-                        <div class="col-auto d-none d-md-block">
-                            <div
-                                style="width: 200px; height: 200px; border-radius: 6px; background-color: #292929;
-                                display: grid !important;
-                                justify-content: center;
-                                align-content: center;"
-                            >
-                            <img style="max-height:200px; max-width:200px;" src="<%=
-                            featured_post.thumb ? featured_post.thumb :
-                            "/assets/img/default_blog_image.svg" %>" alt="">
-                            </div>
+                        <div
+                            style="width: 200px; height: 200px; border-radius: 3px; background-color: #292929;
+                            display: grid !important;
+                            flex: 0.7;
+                            justify-content: center;
+                            align-content: center;"
+                            class="col-auto d-none d-lg-block"
+                        >
+						<img style="max-height:200px; max-width:200px;" src="<%=
+                        featured_post.thumb ? featured_post.thumb :
+                        "/assets/img/default_blog_image.svg" %>" alt="">
                         </div>
                     </div>
                 </div>
             </div>
-            <div style="height: 100%; flex: 1;">
-                <div style="border: 1px solid grey; border-radius: 6px;">
+            <div style="height: 100%; width: 450px; flex-grow: 1;">
+                <div style="border: 2px solid #292929; border-radius: 3px;">
                     <h2 class="
                             mb-2
                             text-white
                             greyscale
-                        ">
+                        " style="padding: 8px;">
                         FEATURED PROJECT
                     </h2>
-                    <div style="padding: 8px; display: flex; gap: 8px;">
-                        <div style="border: 1px solid grey; padding: 8px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1;">
+                    <div class="row" style="padding: 8px; flex-wrap: nowrap;">
+                        <div style="border: 1px solid grey; padding: 8px; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
 							<div>
 								<h3 class="mb-0"><%= featured_project.name %></h3>
 								<hr />
@@ -122,21 +120,21 @@
 								>
 							</div>
                         </div>
-                        <div class="col-auto d-none d-md-block">
-                            <div
-                                style=" width: 200px;
-                                height: 200px;
-                                border-radius: 6px;
-                                background-color: #292929;
-                                display: grid !important;
-                                justify-content: center;
-                                align-content: center;"
-                            >
-                                <img style="width: 100%; height: 100%; max-height:200px; max-width:200px;"
-                                src="<%= featured_project.thumb ?
-                                featured_project.thumb :
-                                "/assets/img/default_project_image.svg" %>" alt="">
-                            </div>
+                        <div
+                            style=" width: 200px;
+                            height: 200px;
+                            border-radius: 3px;
+                            flex: 0.7;
+                            background-color: #292929;
+                            display: grid !important;
+                            justify-content: center;
+                            align-content: center;"
+                            class="col-auto d-none d-lg-block"
+                        >
+                            <img style="width: 100%; height: 100%; max-height:200px; max-width:200px;"
+                            src="<%= featured_project.thumb ?
+                            featured_project.thumb :
+                            "/assets/img/default_project_image.svg" %>" alt="">
                         </div>
                     </div>
                 </div>
@@ -144,7 +142,7 @@
         </div>
 
         <!-- Link to projects and blog -->
-        <div style="padding: 8px;" class="row">
+        <div style="justify-content: center; gap: 32px;" class="row">
             <div class="col-md-6 text-center">
                 <p class="m-2">
                     <a href="/blog" class="btn btn-outline-dark"
@@ -161,99 +159,104 @@
             </div>
         </div>
         <!-- Skills pane -->
-        <div class="row mb-4">
-            <div class="rounded-white px-md-3 pb-md-5 pt-md-3">
-                <!-- Title section -->
-                <div class="text-center">
-                    <h1 class="fst-italic">Arsenal</h1>
-                    <p>
-                        Suite of some of the programming languages, tools and
-                        software that I've become familiar with throughout my professional and recreational career.
-                    </p>
-                </div>
-                <hr />
-                <div class="skill-container text-white">
-                    <div class="skill-box rounded-black p-3">
-                        <div class="skill-header">
-                            <span class="lavender pt-2">
-                                <div class="diamond"></div>
-                            </span>
-                            <h3>Languages</h3>
-                            <span class="lavender pt-2">
-                                <div class="diamond"></div>
-                            </span>
-                        </div>
+        <!-- Title section -->
+        <div class="text-center">
+            <h1 class="fst-italic">Arsenal</h1>
+            <p>
+                Suite of some of the programming languages, tools and
+                software that I've encountered while working on my hobby
+                projects and throughout my professional career.
+            </p>
+        </div>
+        <div class="col">
+            <!-- <hr /> -->
+            <div class="skill-container text-white">
+                <div class="skill-box rounded-black">
+                    <div class="skill-header">
+                        <span class="lavender pt-2">
+                            <div style="width: 10px; height: 10px;" class="diamond"></div>
+                        </span>
+                        <h3>Languages</h3>
+                        <span class="lavender pt-2">
+                            <div style="width: 10px; height: 10px;" class="diamond"></div>
+                        </span>
+                    </div>
 
-                        <div class="text-center">
+                    <div class="text-center">
+                        
                             <img
                                 width="100px"
                                 src="/assets/img/code.svg"
                                 alt=""
                             />
-                        </div>
-
-                        <div class="text-center border p-3">
-                            <span class="tag lead">C++</span>,
-                            <span class="tag lead">Lua</span>,
-                            <span class="tag lead">TypeScript</span>,
-                            <span class="tag lead">HTML</span>,
-                            <span class="tag lead">CSS</span>
-                        </div>
                     </div>
-                    <div class="skill-box rounded-black p-3">
-                        <div class="skill-header">
-                            <span class="lavender pt-2">
-                                <div class="diamond"></div>
-                            </span>
-                            <h3>Frameworks/Engines</h3>
-                            <span class="lavender pt-2">
-                                <div class="diamond"></div>
-                            </span>
-                        </div>
 
-                        <div class="text-center">
+                    <div class="text-center border p-3">
+                        <span class="tag lead">C++</span>,
+                        <span class="tag lead">Lua</span>,
+                        <span class="tag lead">TypeScript</span>,
+                        <span class="tag lead">HTML</span>,
+                        <span class="tag lead">CSS</span>
+                    </div>
+                </div>
+                <div class="skill-box rounded-black">
+                    <div class="skill-header">
+                        <span class="lavender pt-2">
+                            <div style="width: 10px; height: 10px;" class="diamond"></div>
+                        </span>
+                        <h3>Frameworks/Engines</h3>
+                        <span class="lavender pt-2">
+                            <div style="width: 10px; height: 10px;" class="diamond"></div>
+                        </span>
+                    </div>
+
+                    <div class="text-center" style="align-self:center;">
+                        <div style="border: 2px solid white; padding: 8px;">
                             <img
                                 width="100px"
                                 src="/assets/img/cogs.svg"
                                 alt=""
                             />
                         </div>
-
-                        <div class="text-center border p-3">
-                            <span class="tag lead">Node.js</span>,
-                            <span class="tag lead">Godot</span>,
-                            <span class="tag lead">React</span>,
-                            <span class="tag lead">Angular</span>,
-                            <span class="tag lead">OpenCV</span>
-                        </div>
                     </div>
-                    <div class="skill-box rounded-black p-3">
-                        <div class="skill-header">
-                            <span class="lavender pt-2">
-                                <div class="diamond"></div>
-                            </span>
-                            <h3>Tools & Tech</h3>
-                            <span class="lavender pt-2">
-                                <div class="diamond"></div>
-                            </span>
-                        </div>
 
-                        <div class="text-center">
+                    <div class="text-center border p-3">
+                        <span class="tag lead">Node.js</span>,
+                        <span class="tag lead">Godot</span>,
+                        <span class="tag lead">React</span>,
+                        <span class="tag lead">Angular</span>,
+                        <span class="tag lead">OpenCV</span>
+                    </div>
+                </div>
+                <div class="skill-box rounded-black">
+                    <div class="skill-header">
+                        <span class="lavender">
+                            <div style="width: 10px; height: 10px;" class="diamond"></div>
+                        </span>
+                        <h3>Tools & Tech</h3>
+                        <span class="lavender pt-2">
+                            <div style="width: 10px; height: 10px;" class="diamond"></div>
+                        </span>
+                    </div>
+
+                    <div class="text-center" style="align-self: center;">
+                        <div style="border: 2px solid white; padding: 8px;">
+                        
                             <img
                                 width="75px"
                                 src="/assets/img/wrench.svg"
                                 alt=""
                             />
                         </div>
+                    </div>
 
-                        <div class="text-center border p-3">
-                            <span class="tag lead">Bash</span>,
-                            <span class="tag lead">PostgreSQL</span>,
-                            <span class="tag lead">Arduino</span>,
-                            <span class="tag lead">CSP</span>,
-                            <span class="tag lead">Affinity Designer</span>,
-                            <span class="tag lead">Blender</span>
-                        </div>
+                    <div class="text-center border p-3">
+                        <span class="tag lead">Bash</span>,
+                        <span class="tag lead">PostgreSQL</span>,
+                        <span class="tag lead">Arduino</span>,
+                        <span class="tag lead">CSP</span>,
+                        <span class="tag lead">Affinity Designer</span>,
+                        <span class="tag lead">Blender</span>
                     </div>
                 </div>
             </div>

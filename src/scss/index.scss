@@ -1,5 +1,6 @@
 @import './includes/vars';
 @import './includes/mixins';
+@import './components/about.scss';
 @import './components/main.scss';
 @import './components/home.scss';
 @import './components/sidebar.scss';
@@ -8,6 +9,5 @@
 @import './components/blog.scss';
 @import './components/graphics.scss';
 
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "@fortawesome/fontawesome-free/scss/solid.scss";

@@ -1,14 +1,14 @@
 import { config } from 'dotenv';
 import express, { NextFunction, Request, Response } from 'express';
+import bodyParser from 'body-parser';
 import expressLayouts from 'express-ejs-layouts';
 import path from 'path';
 import createError from 'http-errors';
 import favicon from 'serve-favicon';
 //import logger from 'morgan';
 //import cors from "cors";
-//import bodyParser from 'body-parser'
 
-import user_routes from './controllers/users';
+// import user_routes from './controllers/users';
 import projects_controller from './controllers/projects';
 import posts_controller from './controllers/posts';
 import console_controller from './controllers/console';
@@ -19,6 +19,8 @@ config();
 
 const app: express.Application = express();
 const port = process.env.PORT || 8080;
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -56,12 +58,12 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // https://expressjs.com/en/starter/static-files.html
 // https://stackoverflow.com/questions/30473993/how-to-use-npm-installed-bootstrap-in-express
-app.use(
-    '/bootstrap',
-    express.static(
-        path.join(process.cwd(), 'node_modules', 'bootstrap', 'dist')
-    )
-);
+// app.use(
+//     '/bootstrap',
+//     express.static(
+//         path.join(process.cwd(), 'node_modules', 'bootstrap', 'dist')
+//     )
+// );
 app.use(
     '/jquery',
     express.static(path.join(process.cwd(), 'node_modules', 'jquery', 'dist'))
