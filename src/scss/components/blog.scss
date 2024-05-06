@@ -2,6 +2,8 @@
 .post-container{
 	display: grid;
     height: 100%;
+	padding: 32px;
+  	gap: 16px;
 
 	img, video{
 		max-width: 100%;
@@ -20,10 +22,21 @@
 	}
 }
 
+.post-featured{
+	border: 2px solid $background;
+	border-radius: 3px;
+	
+	.post-featured-title{
+		padding: 16px;
+		color: white;
+	}
+}
+
 .blog-hero{
 	background-color: $background;
 	position: relative;
-	
+	padding: 32px;
+
 	//border: 2px solid red;
 	//border-radius: 50px;
 	outline: 1px solid #fff;

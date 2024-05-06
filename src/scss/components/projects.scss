@@ -1,11 +1,21 @@
 .project-hero{
-	background-color: $background;
+	// background-color: $background;
 	position: relative;
+
+	// padding: 32px;
 	
-	//border: 2px solid red;
-	//border-radius: 50px;
-	outline: 1px solid #fff;
-    outline-offset: -10px;
+	border: 2px solid $background;
+	border-radius: 3px;
+	// outline: 1px solid #fff;
+    // outline-offset: -10px;
+
+	.project-title{
+		padding: 16px;
+		color: white;
+		background-color: $background;
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 //https://stackoverflow.com/questions/6169666/how-to-resize-an-image-to-fit-in-the-browser-window
@@ -14,6 +24,9 @@
 	position: relative;
 	display: grid;
     height: 100%;
+
+	padding: 32px;
+	gap: 16px;
 
 	img, video{
 		max-width: 100%;
@@ -28,13 +41,15 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
-	justify-content: center;
+	justify-content: space-between;
 }
 
 .project-thumb{
 	background-color: transparent;
 	width: 300px;
 	height: 450px;
+
+	margin: auto;
 
 	perspective: 1000px; /* Remove this if you don't want the 3D effect */
 
@@ -53,6 +68,8 @@
 			flex-direction: column;
 
 			position: absolute;
+
+			padding: 32px;
 			
 			width: 100%;
 			height: 100%;

@@ -7,7 +7,7 @@
 }
 
 // https://stackoverflow.com/questions/7049875/why-doesnt-height-100-work-to-expand-divs-to-the-screen-height
-* { padding: 0; margin: 0; }
+* { padding: 0; margin: 0; box-sizing: border-box; }
 html, body {
 	min-height: 100% !important;
     height: 100%;
@@ -42,7 +42,9 @@ a {
 	transition: margin-left .5s;
 
 	.main-content-inner{
-		padding: 64px;
+
+		padding: 32px 64px;
+
 	}
 
 	@include constrain($med){
@@ -85,42 +87,104 @@ a {
 	}
 }
 
-.skill-container{
+.col{
+	// height: 100%;
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
+	gap: 16px;
+}
 
-	justify-content: space-around;
+.row{
+	width: 100%;
+	display: flex;
+	gap: 16px;
+}
 
-	::selection{
-		background-color:$lavender;
-		//color:blanchedalmond;
-		color:black;
-	}
+.text-white{
+	color: white;
+}
 
-	.skill-box{
-		margin-top: 10px;
-		width: 400px;
-		height: 300px;
+.text-center{
+	text-align: center;
+}
 
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-
-		position:relative;
-
-		//rounded corners, kind of like cards
-		border-radius: 15px;
-		border: 3px solid $background;
-
-		.skill-header{
-			display: flex;
-			flex-direction: row;
-			justify-content: space-around;
-		}
+.desktop{
+	display: block;
+	@include constrain($med){
+		display: none;
 	}
 }
 
-.col{
+.tablet{
+	display: none;
+	@include constrain($med){
+		display: none;
+	}
+}
+
+.mobile{
+	display: none;
+	@include constrain($small){
+		display: block;
+	}
+}
+
+.mobile-nav{
+	display: none;
+	@include constrain($med){
+		display: block;
+	}
+}
+
+.inline-mobile-nav{
+	display: none;
+	@include constrain($med){
+		display: inline-block;
+	}
+}
+
+.card{
+	padding: 16px;
+	border: 1px solid black;
+	border-radius: 3px;
 	display: flex;
 	flex-direction: column;
+	gap: 16px;
+}
+
+.container{
+	padding: 32px;
+}
+
+.btn{
+	padding: 16px;
+	border: 1px solid $background;
+	border-radius: 6px;
+	text-decoration: none;
+	color: $background;
+	background-color: white;
+	display:inline-block;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.btn:hover{
+	background-color: $background;
+  	color: white;
+}
+
+.scroll-to-top{
+	display: flex;
+	justify-content: center;
+	padding: 8px;
+}
+
+.outline-circle{
+	border: 1px solid currentColor;
+	padding: 8px;
+	border-radius: 50%;
+}
+
+.text-danger{
+	color: #e43a3a;
 }

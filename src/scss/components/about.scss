@@ -1,0 +1,23 @@
+.contact-form-container{
+	// background-color: $background;
+	// outline: 1px solid #fff;
+    // outline-offset: -10px;
+	// max-width: 900px;
+	// align-self: center;
+	.control-group{
+		label{
+			display: block;
+			margin-bottom: 8px;
+		}
+	
+		input, textarea{
+			width: 100%;
+		}
+	}
+
+	.form-submit{
+		@include constrain($small){
+			align-self: center;
+		}
+	}
+}

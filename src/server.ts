@@ -1,14 +1,14 @@
 import { config } from 'dotenv';
 import express, { NextFunction, Request, Response } from 'express';
+import bodyParser from 'body-parser';
 import expressLayouts from 'express-ejs-layouts';
 import path from 'path';
 import createError from 'http-errors';
 import favicon from 'serve-favicon';
 //import logger from 'morgan';
 //import cors from "cors";
-//import bodyParser from 'body-parser'
 
-import user_routes from './controllers/users';
+// import user_routes from './controllers/users';
 import projects_controller from './controllers/projects';
 import posts_controller from './controllers/posts';
 import console_controller from './controllers/console';
@@ -19,6 +19,8 @@ config();
 
 const app: express.Application = express();
 const port = process.env.PORT || 8080;
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

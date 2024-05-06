@@ -34,6 +34,7 @@
 		height: auto;
 		position: relative;
 		display: block;
+		transition: height .5s;
 	}
 
 	a, p.description {
@@ -56,6 +57,10 @@
 		@include constrain($med){
 			display: inline-block;
 		}
+
+		@include constrain($small){
+			margin-right: 62px;
+		}
 	}
 
 	h2{
@@ -72,11 +77,12 @@
 	}
 
 	.sidebar-pills{
+		transition: height .5s;
 		overflow:hidden;
 		font-size: 1.5em;
 		text-align: right;
 		display:block;
-		padding: 0px 64px;
+		// padding: 0px 64px;
 		margin-bottom: 64px;
 		// padding-right:50px;
 		//margin-top: 5rem;
@@ -84,22 +90,24 @@
 		//top:50%;
 
 		/* constraint for smaller screens */
-		@include constrain($med){
-			position: absolute;
-			float:right;
-			text-align:right;
-			top: 0;
-			right: 0;
-			font-size: 1em;
-			margin-top: 2%;
-		}
+		// @include constrain($med){
+		// 	position: absolute;
+		// 	float:right;
+		// 	text-align:right;
+		// 	top: 0;
+		// 	right: 0;
+		// 	font-size: 1em;
+		// 	margin-top: 2%;
+		// }
 
-		@include constrain($small){
+		@include constrain($med){
 			display: none;
 			position: relative;
 			font-size: 1em;
 			padding-right: 5px;
-			float: left;
+			// float: left;
+			display: flex;
+			padding: 0px;
 		}
 
 		.nav-pills{
@@ -115,6 +123,42 @@
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
+
+			}
+		}
+	}
+
+	.android-sidebar-pills{
+		transition: height .5s;
+		overflow:hidden;
+		font-size: 1.5em;
+		text-align: right;
+		display:block;
+		padding: 0px 64px;
+
+		@include constrain($med){
+			display: none;
+			position: relative;
+			font-size: 1em;
+			padding-right: 5px;
+			display: flex;
+			padding: 0px;
+		}
+
+		.nav-pills{
+			display: flex;
+			// flex-direction: column;
+			gap: 8px;
+
+			a{
+				display: inline-block;
+			}
+
+			.nav-pill{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
 			}
 		}
 	}
@@ -132,9 +176,15 @@
 
 	.nav-link:hover{
 		color:white;
-		a{
+		a, i{
 			color: white;
 		}
+	}
+
+	// the order in which attributes are overwritten is 
+	// determined by where they appear in css, crazy
+	.nav-link-white{
+		color: white;
 	}
 
 	#console-nav{
@@ -154,13 +204,13 @@
 	.android-pills{
 		display: none;
 
-		@include constrain($small){
+		@include constrain($med){
 			display:block;
 			position: absolute;
 			float:right;
 			text-align:right;
 			top: 0;
-			right: 1rem;
+			right: 24px;
 			font-size: 1em;
 			margin-top: 2%;
 		}

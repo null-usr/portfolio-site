@@ -1,4 +1,17 @@
 @import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/hk-grotesk.min.css");
+.contact-form-container .control-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+.contact-form-container .control-group input, .contact-form-container .control-group textarea {
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .contact-form-container .form-submit {
+    align-self: center;
+  }
+}
+
 ::selection {
   background-color: #292929;
   color: white;
@@ -7,6 +20,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -35,7 +49,7 @@ a {
   transition: margin-left 0.5s;
 }
 .main-content .main-content-inner {
-  padding: 64px;
+  padding: 32px 64px;
 }
 @media screen and (max-width: 1060px) {
   .main-content {
@@ -76,42 +90,125 @@ a {
   background-color: #c0adf0;
 }
 
-.skill-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.skill-container ::selection {
-  background-color: #c0adf0;
-  color: black;
-}
-.skill-container .skill-box {
-  margin-top: 10px;
-  width: 400px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  border-radius: 15px;
-  border: 3px solid #292929;
-}
-.skill-container .skill-box .skill-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
 .col {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.desktop {
+  display: block;
+}
+@media screen and (max-width: 1060px) {
+  .desktop {
+    display: none;
+  }
+}
+
+.tablet {
+  display: none;
+}
+@media screen and (max-width: 1060px) {
+  .tablet {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .mobile {
+    display: block;
+  }
+}
+
+.mobile-nav {
+  display: none;
+}
+@media screen and (max-width: 1060px) {
+  .mobile-nav {
+    display: block;
+  }
+}
+
+.inline-mobile-nav {
+  display: none;
+}
+@media screen and (max-width: 1060px) {
+  .inline-mobile-nav {
+    display: inline-block;
+  }
+}
+
+.card {
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.container {
+  padding: 32px;
+}
+
+.btn {
+  padding: 16px;
+  border: 1px solid #292929;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #292929;
+  background-color: white;
+  display: inline-block;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #292929;
+  color: white;
+}
+
+.scroll-to-top {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+.outline-circle {
+  border: 1px solid currentColor;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.text-danger {
+  color: #e43a3a;
 }
 
 .home-hero {
-  background-color: #292929;
   position: relative;
-  outline: 1px solid #fff;
-  outline-offset: -10px;
+  border: 2px solid #292929;
+  border-radius: 3px;
+}
+.home-hero .header-title {
+  background-color: #292929;
+  padding: 16px;
 }
 
 .home-logo {
@@ -121,6 +218,37 @@ a {
   display: inline-block;
   height: 100%;
   vertical-align: middle;
+}
+
+.skill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-around;
+}
+.skill-container ::selection {
+  background-color: #c0adf0;
+  color: black;
+}
+.skill-container .skill-box {
+  width: 300px;
+  height: 300px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  border-radius: 3px;
+  border: 2px solid #292929;
+  background: #292929;
+}
+.skill-container .skill-box .skill-header {
+  display: flex;
+  gap: 16px;
+  align-self: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .go-to-bottom {
@@ -157,6 +285,7 @@ a {
     height: auto;
     position: relative;
     display: block;
+    transition: height 0.5s;
   }
 }
 .main-sidebar a, .main-sidebar p.description {
@@ -182,6 +311,11 @@ a {
     display: inline-block;
   }
 }
+@media screen and (max-width: 600px) {
+  .main-sidebar a.home {
+    margin-right: 62px;
+  }
+}
 .main-sidebar h2 {
   text-align: center;
   font-size: 3em;
@@ -196,32 +330,22 @@ a {
   }
 }
 .main-sidebar .sidebar-pills {
+  transition: height 0.5s;
   overflow: hidden;
   font-size: 1.5em;
   text-align: right;
   display: block;
-  padding: 0px 64px;
   margin-bottom: 64px;
   /* constraint for smaller screens */
 }
 @media screen and (max-width: 1060px) {
   .main-sidebar .sidebar-pills {
-    position: absolute;
-    float: right;
-    text-align: right;
-    top: 0;
-    right: 0;
-    font-size: 1em;
-    margin-top: 2%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .main-sidebar .sidebar-pills {
     display: none;
     position: relative;
     font-size: 1em;
     padding-right: 5px;
-    float: left;
+    display: flex;
+    padding: 0px;
   }
 }
 .main-sidebar .sidebar-pills .nav-pills {
@@ -233,6 +357,36 @@ a {
   display: inline-block;
 }
 .main-sidebar .sidebar-pills .nav-pills .nav-pill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-sidebar .android-sidebar-pills {
+  transition: height 0.5s;
+  overflow: hidden;
+  font-size: 1.5em;
+  text-align: right;
+  display: block;
+  padding: 0px 64px;
+}
+@media screen and (max-width: 1060px) {
+  .main-sidebar .android-sidebar-pills {
+    display: none;
+    position: relative;
+    font-size: 1em;
+    padding-right: 5px;
+    display: flex;
+    padding: 0px;
+  }
+}
+.main-sidebar .android-sidebar-pills .nav-pills {
+  display: flex;
+  gap: 8px;
+}
+.main-sidebar .android-sidebar-pills .nav-pills a {
+  display: inline-block;
+}
+.main-sidebar .android-sidebar-pills .nav-pills .nav-pill {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -251,7 +405,10 @@ a {
 .main-sidebar .nav-link:hover {
   color: white;
 }
-.main-sidebar .nav-link:hover a {
+.main-sidebar .nav-link:hover a, .main-sidebar .nav-link:hover i {
+  color: white;
+}
+.main-sidebar .nav-link-white {
   color: white;
 }
 @media screen and (max-width: 600px) {
@@ -270,14 +427,14 @@ a {
 .main-sidebar .android-pills {
   display: none;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1060px) {
   .main-sidebar .android-pills {
     display: block;
     position: absolute;
     float: right;
     text-align: right;
     top: 0;
-    right: 1rem;
+    right: 24px;
     font-size: 1em;
     margin-top: 2%;
   }
@@ -414,16 +571,24 @@ a {
 }
 
 .project-hero {
-  background-color: #292929;
   position: relative;
-  outline: 1px solid #fff;
-  outline-offset: -10px;
+  border: 2px solid #292929;
+  border-radius: 3px;
+}
+.project-hero .project-title {
+  padding: 16px;
+  color: white;
+  background-color: #292929;
+  display: flex;
+  justify-content: space-between;
 }
 
 .project-container {
   position: relative;
   display: grid;
   height: 100%;
+  padding: 32px;
+  gap: 16px;
 }
 .project-container img, .project-container video {
   max-width: 100%;
@@ -435,13 +600,14 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .project-thumb {
   background-color: transparent;
   width: 300px;
   height: 450px;
+  margin: auto;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
   /* This container is needed to position the front and back side */
 }
@@ -460,6 +626,7 @@ a {
   display: flex;
   flex-direction: column;
   position: absolute;
+  padding: 32px;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
@@ -509,6 +676,8 @@ a {
 .post-container {
   display: grid;
   height: 100%;
+  padding: 32px;
+  gap: 16px;
 }
 .post-container img, .post-container video {
   max-width: 100%;
@@ -525,9 +694,19 @@ a {
   flex-grow: 1;
 }
 
+.post-featured {
+  border: 2px solid #292929;
+  border-radius: 3px;
+}
+.post-featured .post-featured-title {
+  padding: 16px;
+  color: white;
+}
+
 .blog-hero {
   background-color: #292929;
   position: relative;
+  padding: 32px;
   outline: 1px solid #fff;
   outline-offset: -10px;
 }
