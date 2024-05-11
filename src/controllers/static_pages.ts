@@ -105,7 +105,13 @@ const static_pages = (app: express.Application): void => {
                         from: request.body.email,
                         to: process.env.EMAIL,
                         subject: request.body.subject,
-                        text: request.body.message,
+                        text:
+                            'new message from: ' +
+                            request.body.name +
+                            '(' +
+                            request.body.email +
+                            '): ' +
+                            request.body.message,
                     }
     
                     transporter.sendMail(mail_option, (error, info) => {
