@@ -18,7 +18,7 @@ const store = new ResourceLoader()
 const index = async (_req: Request, res: Response) => {
     try {
         const response = await fetch(
-            'http://localhost:1337/api/projects?populate[Thumbnail][fields][0]=url&populate[tags]=*'
+            'https://api.nclarke.dev/api/projects?populate[Thumbnail][fields][0]=url&populate[tags]=*'
         )
         const d = await response.json()
         const projects = d.data.map((d: any) => ({
@@ -58,7 +58,7 @@ const show = async (req: Request, res: Response) => {
     try {
         //const project = await store.show(parseInt(req.params.id));
         const response = await fetch(
-            'http://localhost:1337/api/projects?filters[slug][$eq]=' +
+            'https://api.nclarke.dev/api/projects?filters[slug][$eq]=' +
                 req.params.slug +
                 '&populate[Thumbnail][fields][0]=url&populate[tags]=*'
         )

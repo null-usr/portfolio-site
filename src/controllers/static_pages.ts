@@ -16,7 +16,7 @@ import nodemailer from 'nodemailer'
 const index = async (_req: Request, res: Response) => {
     try {
         let response = await fetch(
-            'http://localhost:1337/api/blogs?populate[Thumbnail][fields][0]=url'
+            'https://api.nclarke.dev/api/blogs?populate[Thumbnail][fields][0]=url'
         )
         let data = await response.json()
         const posts = data.data.map((d: any) => ({
@@ -31,7 +31,7 @@ const index = async (_req: Request, res: Response) => {
         }))
 
         response = await fetch(
-            'http://localhost:1337/api/projects?populate[Thumbnail][fields][0]=url&populate[tags]=*'
+            'https://api.nclarke.dev/api/projects?populate[Thumbnail][fields][0]=url&populate[tags]=*'
         )
         data = await response.json()
         const projects = data.data.map((d: any) => ({
@@ -85,7 +85,7 @@ const about = async (req: Request, res: Response) => {
 const resume = async (_req: Request, res: Response) => {
     try {
         const response = await fetch(
-            'http://localhost:1337/api/CV?populate[CV][fields][0]=url'
+            'https://api.nclarke.dev/api/CV?populate[CV][fields][0]=url'
         )
         const data = await response.json()
         const url = data.data.CV.url

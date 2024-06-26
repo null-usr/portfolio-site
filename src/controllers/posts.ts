@@ -11,7 +11,7 @@ const store = new ResourceLoader()
 const index = async (_req: Request, res: Response) => {
     try {
         const response = await fetch(
-            'http://localhost:1337/api/blogs?populate[Thumbnail][fields][0]=url'
+            'https://api.nclarke.dev/api/blogs?populate[Thumbnail][fields][0]=url'
         )
         const d = await response.json()
         const posts = d.data.map((d: any) => ({
@@ -46,7 +46,7 @@ const index = async (_req: Request, res: Response) => {
 const show = async (req: Request, res: Response) => {
     try {
         const response = await fetch(
-            'http://localhost:1337/api/blogs?filters[slug][$eq]=' +
+            'https://api.nclarke.dev/api/blogs?filters[slug][$eq]=' +
                 req.params.slug +
                 '&populate[Thumbnail][fields][0]=url'
         )
