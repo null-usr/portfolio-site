@@ -1,16 +1,12 @@
 import express, { Request, Response } from 'express'
-import {
-    ValidationError,
-    check,
-    validationResult,
-} from 'express-validator'
+import { ValidationError, check, validationResult } from 'express-validator'
 import nodemailer from 'nodemailer'
-import { Project } from '../models/project'
-import { ResourceLoader } from '../config/resourceLoader'
-import { Post } from '../models/post'
+// import { Project } from '../models/project'
+// import { ResourceLoader } from '../config/resourceLoader'
+// import { Post } from '../models/post'
 
 //const router = express.Router();
-const store = new ResourceLoader()
+// const store = new ResourceLoader()
 
 /* GET home page. */
 /*const index_route = router.get('/', function(req, res, next) {
@@ -19,16 +15,46 @@ const store = new ResourceLoader()
 
 const index = async (_req: Request, res: Response) => {
     try {
-        const posts = store.index<Post>('blog').sort((a: Post, b: Post) => {
-            return a.createdAt < b.createdAt ? 1 : -1
-        })
+        let response = await fetch(
+            'http://localhost:1337/api/blogs?populate[Thumbnail][fields][0]=url'
+        )
+        let data = await response.json()
+        const posts = data.data.map((d: any) => ({
+            id: d.id,
+            createdAt: d.createdAt,
+            title: d.Title,
+            summary: d.Summary,
+            content: d.Content,
+            thumb: d.Thumbnail ? d.Thumbnail.url : undefined,
+            tags: d.tags ? d.tags.map((t: { Name: string }) => t.Name) : [],
+            slug: d.slug,
+        }))
+
+        response = await fetch(
+            'http://localhost:1337/api/projects?populate[Thumbnail][fields][0]=url&populate[tags]=*'
+        )
+        data = await response.json()
+        const projects = data.data.map((d: any) => ({
+            id: d.id,
+            createdAt: d.createdAt,
+            title: d.Title,
+            summary: d.Summary,
+            content: d.Content,
+            thumb: d.Thumbnail ? d.Thumbnail.url : undefined,
+            tags: d.tags.map((t: { Name: string }) => t.Name),
+            slug: d.slug,
+        }))
+
+        // const posts = store.index<Post>('blog').sort((a: Post, b: Post) => {
+        //     return a.createdAt < b.createdAt ? 1 : -1
+        // })
 
         const featured_post = posts[0]
         featured_post.createdAt = new Date(
             featured_post.createdAt as unknown as string
         )
 
-        const projects = store.index<Project>('projects')
+        // const projects = store.index<Project>('projects')
         const featured_project =
             projects[Math.floor(Math.random() * projects.length)]
 
@@ -50,17 +76,23 @@ const about = async (req: Request, res: Response) => {
             root: '/about',
             errors: null,
             success: null,
-        });
+        })
     } catch (err) {
-        res.status(500).json(err);
+        res.status(500).json(err)
     }
 }
 
 const resume = async (_req: Request, res: Response) => {
     try {
-        res.render('resume', { title: 'Resume', root: '/resume' });
+        const response = await fetch(
+            'http://localhost:1337/api/CV?populate[CV][fields][0]=url'
+        )
+        const data = await response.json()
+        const url = data.data.CV.url
+
+        res.render('resume', { title: 'Resume', root: '/resume', url })
     } catch (err) {
-        res.status(500).json(err);
+        res.status(500).json(err)
     }
 }
 
@@ -79,18 +111,17 @@ const static_pages = (app: express.Application): void => {
         ],
         (request: Request, response: Response) => {
             try {
+                const errors = validationResult(request)
 
-                const errors = validationResult(request);
-    
                 if (!errors.isEmpty()) {
-                    console.log('FORM ERRORS');
+                    console.log('FORM ERRORS')
                     response.render('about', {
                         title: 'About',
                         root: '/about',
                         errors: errors.mapped(),
                         success: false,
-                    });
-                    return;
+                    })
+                    return
                 } else {
                     const transporter = nodemailer.createTransport({
                         service: 'Gmail',
@@ -99,8 +130,8 @@ const static_pages = (app: express.Application): void => {
                             pass: process.env.SENDER_PASS,
                             // pass: 'write your Google App Password',
                         },
-                    });
-    
+                    })
+
                     const mail_option = {
                         from: request.body.email,
                         to: process.env.EMAIL,
@@ -113,28 +144,28 @@ const static_pages = (app: express.Application): void => {
                             '): ' +
                             request.body.message,
                     }
-    
+
                     transporter.sendMail(mail_option, (error, info) => {
                         if (error) {
-                            console.log(error);
+                            console.log(error)
                             response.render('about', {
                                 title: 'About',
                                 root: '/about',
                                 success: false,
                                 errors: { email: error },
-                            });
+                            })
                         } else {
                             response.render('about', {
                                 title: 'About',
                                 root: '/about',
                                 success: true,
                                 errors: {},
-                            });
+                            })
                         }
-                    });
+                    })
                 }
             } catch (err) {
-                response.status(500).json(err);
+                response.status(500).json(err)
             }
         }
     )

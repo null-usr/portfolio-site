@@ -1,7 +1,7 @@
-import dotenv from 'dotenv';
-import { Pool } from 'pg';
+import dotenv from 'dotenv'
+import { Pool } from 'pg'
 
-dotenv.config();
+dotenv.config()
 
 const {
     POSTGRES_HOST,
@@ -16,11 +16,11 @@ const {
     AWS_DB_PORT,*/
     ENV,
     SETUP,
-} = process.env;
+} = process.env
 
-let port;
+let port
 if (process.env.POSTGRES_PORT && (ENV === 'test' || ENV === 'dev')) {
-    port = parseInt(process.env.POSTGRES_PORT) || 5432;
+    port = parseInt(process.env.POSTGRES_PORT) || 5432
 }
 /*else if (AWS_DB_PORT)
 {
@@ -32,7 +32,7 @@ else
 }*/
 
 //to get typescript off my back..
-let client: Pool = new Pool();
+let client: Pool = new Pool()
 
 if (ENV === 'test') {
     client = new Pool({
@@ -41,7 +41,7 @@ if (ENV === 'test') {
         user: POSTGRES_USER,
         password: POSTGRES_PASSWORD,
         port: port || 5432,
-    });
+    })
 } else if (ENV === 'prod') {
     /*client = new Pool({
         host: AWS_DB_HOST,
@@ -57,7 +57,7 @@ if (ENV === 'test') {
         user: POSTGRES_USER,
         password: POSTGRES_PASSWORD,
         port: port || 5432,
-    });
+    })
 }
 
-export default client;
+export default client
