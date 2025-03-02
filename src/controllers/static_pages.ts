@@ -1,3 +1,4 @@
+import axios from 'axios'
 import express, { Request, Response } from 'express'
 import { ValidationError, check, validationResult } from 'express-validator'
 import nodemailer from 'nodemailer'
@@ -108,13 +109,17 @@ const static_pages = (app: express.Application): void => {
             check('email').isEmail().withMessage('Invalid Email Address'),
             check('subject').notEmpty().withMessage('Subject is required'),
             check('message').notEmpty().withMessage('Message is required'),
+            check('g-recaptcha-response')
+                .notEmpty()
+                .withMessage('please complete the captcha'),
         ],
-        (request: Request, response: Response) => {
+        async (request: Request, response: Response) => {
             try {
                 const errors = validationResult(request)
 
                 if (!errors.isEmpty()) {
                     console.log('FORM ERRORS')
+					console.log(errors)
                     response.render('about', {
                         title: 'About',
                         root: '/about',
@@ -123,46 +128,82 @@ const static_pages = (app: express.Application): void => {
                     })
                     return
                 } else {
-                    const transporter = nodemailer.createTransport({
-                        service: 'Gmail',
-                        auth: {
-                            user: process.env.SENDER_EMAIL,
-                            pass: process.env.SENDER_PASS,
-                            // pass: 'write your Google App Password',
-                        },
-                    })
+                    // recheck captcha
+                    const recaptchaResponse =
+                        request.body['g-recaptcha-response']
 
-                    const mail_option = {
-                        from: request.body.email,
-                        to: process.env.EMAIL,
-                        subject: request.body.subject,
-                        text:
-                            'new message from: ' +
-                            request.body.name +
-                            '(' +
-                            request.body.email +
-                            '): ' +
-                            request.body.message,
-                    }
+                    try {
+                        // Send the response to Google's reCAPTCHA verification API
+                        const verificationURL = `https://www.google.com/recaptcha/api/siteverify`
+                        const secretKey = process.env.RECAPTCHA_SECRET_KEY
 
-                    transporter.sendMail(mail_option, (error, info) => {
-                        if (error) {
-                            console.log(error)
-                            response.render('about', {
-                                title: 'About',
-                                root: '/about',
-                                success: false,
-                                errors: { email: error },
+                        const { data } = await axios.post(
+                            verificationURL,
+                            null,
+                            {
+                                params: {
+                                    secret: secretKey,
+                                    response: recaptchaResponse,
+                                },
+                            }
+                        )
+
+                        if (data.success) {
+                            const transporter = nodemailer.createTransport({
+                                service: 'Gmail',
+                                auth: {
+                                    user: process.env.SENDER_EMAIL,
+                                    pass: process.env.SENDER_PASS,
+                                    // pass: 'write your Google App Password',
+                                },
+                            })
+
+                            const mail_option = {
+                                from: request.body.email,
+                                to: process.env.EMAIL,
+                                subject: request.body.subject,
+                                text:
+                                    'new message from: ' +
+                                    request.body.name +
+                                    '(' +
+                                    request.body.email +
+                                    '): ' +
+                                    request.body.message,
+                            }
+
+                            transporter.sendMail(mail_option, (error, info) => {
+                                if (error) {
+                                    console.log(error)
+                                    response.render('about', {
+                                        title: 'About',
+                                        root: '/about',
+                                        success: false,
+                                        errors: { email: error },
+                                    })
+                                } else {
+                                    response.render('about', {
+                                        title: 'About',
+                                        root: '/about',
+                                        success: true,
+                                        errors: {},
+                                    })
+                                }
                             })
                         } else {
-                            response.render('about', {
-                                title: 'About',
-                                root: '/about',
-                                success: true,
-                                errors: {},
-                            })
+							response.render('about', {
+								title: 'About',
+								root: '/about',
+								success: false,
+								errors: { 'g-recaptcha-response': 'reCAPTCHA verification failed' },
+							})
                         }
-                    })
+                    } catch (error) {
+                        console.error('reCAPTCHA verification error:', error)
+                        return response.status(500).json({
+                            success: false,
+                            message: 'Internal server error',
+                        })
+                    }
                 }
             } catch (err) {
                 response.status(500).json(err)

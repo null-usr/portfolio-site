@@ -185,6 +185,13 @@ a {
   color: white;
 }
 
+.btn:disabled {
+	opacity: 0.65;
+	cursor: not-allowed;
+	background-color: white;
+	color: #292929;
+}
+
 .scroll-to-top {
   display: flex;
   justify-content: center;
