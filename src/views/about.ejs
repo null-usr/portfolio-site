@@ -5,6 +5,21 @@
 		</div>
 	</header>
 
+	<script>
+		function enableSubmit() {
+			console.log('captcha filled')
+		  // Get the reCAPTCHA response and enable the submit button if it's not empty
+		  var recaptchaResponse = grecaptcha.getResponse();
+		  var submitButton = document.getElementById("sendMessageButton");
+		  submitButton.disabled = (recaptchaResponse.length === 0);
+		}
+
+		function recaptchaExpired() {
+			var submitButton = document.getElementById("sendMessageButton");
+			submitButton.disabled = true; // Disable submit button when CAPTCHA expires
+      	}
+	  </script>
+
 	<main class="col" style="gap: 32px;">
 		<!-- About Section-->
 		<section class="" id="about">
@@ -78,7 +93,6 @@
 						<h4 class="text-danger" style="text-align: center;">Server error. Please try again later or email directly to ntclarke33@gmail.com</h4>
 					<% } %>
 					<div class="col">
-						<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
 						<form id="contactForm" name="sentMessage" method="post" action="/send">
 							<div class="col">
 								<div class="row">
@@ -115,9 +129,13 @@
 									<textarea class="form-control w3-input w3-border" name="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
 									<p class="help-block text-danger"></p>
 								</div>
+								<% if(errors && errors['g-recaptcha-response']) { %>
+									<span class="text-danger"><%= errors['g-recaptcha-response'].msg %></span>
+								<% } %>
+								<div class="g-recaptcha" data-sitekey="<%= process.env.RECAPTCHA_SITE_KEY %>" data-callback="enableSubmit" data-expired-callback="recaptchaExpired"> </div>
 								<!-- <br /> -->
 								<!-- <div id="success"></div> -->
-								<div class="form-submit" style=""><button class="btn" id="sendMessageButton" type="submit">SEND</button></div>
+								<div class="form-submit" style=""><button class="btn" id="sendMessageButton" type="submit" disabled>SEND</button></div>
 							</div>
 						</form>
 					</div>
